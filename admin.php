@@ -71,9 +71,16 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
         echo '<div style="position: absolute;top:0;left:45%;color:red;font-size:18px;"> Гурток не вибрано! </div>';
     } else {
        $del = R::load('circle',  $id);     
-     
-            R::trash( $del );
-            echo '<div id="a" style="position: absolute;top:0;left:45%;color:green;font-size:18px;">Гурток видалено!</div>';
+          $delCircle_id = $del->id;
+          $users_inDeletingCircle = R::findAll('circlepupils', 'circle_id = ?', [$delCircle_id]);
+          $amountUsers_inCircle = count($users_inDeletingCircle);
+          if ($amountUsers_inCircle == 0) {
+          R::trash( $del ); 
+           echo '<div id="a" style="position: absolute;top:0;left:45%;color:green;font-size:18px;">Гурток видалено!</div>';
+        } else {
+          echo '<div id="a" style="position: absolute;top:0;left:30%;color:red;font-size:18px;">В гуртку ще є учні. Видаліть спочатку всіх учнів з гуртка для видалення!</div>';
+        }
+           
     }
   ?>
   <script> 
