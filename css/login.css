@@ -1,0 +1,79 @@
+* {
+	margin: 0;
+	padding: 0;
+}	
+body {
+	font-family: sans-serif;
+}
+.text {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	margin: 20px 0;
+	font-size: 17px;
+}
+.other-auth__btn {
+	border: 0;
+	width: max-content;
+	padding: 0;
+	border-radius: 0;
+	font-size: 17px;
+	margin: 0 3px;
+	background-color: #fff;
+	color: #461199;
+	text-decoration: underline;
+	font-weight: 600;
+	cursor: pointer;
+}
+.login-form {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	margin: 2% auto 0;			
+}
+.login-title {
+	margin-bottom: 30px;
+}
+.login-input {
+	height: 30px;
+}
+
+.group-btn {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-around;
+	-ms-align-items: center;
+	align-items: center;
+}
+.button {
+	border: 1px solid #000;
+	width: 200px;
+	height: 36px;
+	border-radius: 3px;
+	font-size: 16px;
+	cursor: pointer;
+}
+.link {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
+	width: 198px;
+	height: 34px;
+	border: 1px solid #000;
+	border-radius: 3px;
+	font-size: 16px;
+	text-decoration: none;
+	text-align: center;
+	color: #000;
+}
