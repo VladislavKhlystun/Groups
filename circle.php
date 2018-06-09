@@ -185,7 +185,7 @@
                
       </ul>
 
-      <a href="index.php" class="get-back btm">Повернутись</a>
+      <a href="index.php" class="get-back btm">Назад</a>
     </section>
     
     <!-- .content Контент сайта -->

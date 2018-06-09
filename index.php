@@ -11,7 +11,22 @@
 	<title>Index</title>
 	<link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
-  <style>.df{display: flex;flex-direction: column;align-items: center;}</style>
+  <style>
+    .df{display: flex;flex-direction: column;align-items: center;}
+    .accordion {
+      border: 0;
+      background-color: rgba(255, 242, 195, 0);
+      outline: none;
+      margin: 3px 0;
+      font-size: 17px;
+      cursor: pointer;
+    }
+    .accordion:hover {text-decoration: underline;}
+    .panel {
+      display: none;
+      margin-left: 10px;
+    }
+  </style>
 </head>
 <body>
 	<!-- header -->
@@ -21,17 +36,24 @@
 	<div class="wrap">
     <section class="content">
       <h3 class="content__title">Список гуртків Кропивницького</h3>
-      <ul class="list">
-        <li class="list-item">         
-          <?php foreach ($circle as $item) { ?>
-          <?php //echo $item->name_circle .'<br/>'; ?>
-          <form method="post" action="circle.php" class="list-item__link">
-             <input type="hidden" name="data" value="<?php echo $item->id ?>">
-             <button class="btn-circleName" type="submit" style="border: 0;background-color: #fffaea; cursor: pointer;"><?php echo $item->name_circle ?></button>
-           </form>
-          <?php }; ?>         
-        </li>
-      </ul>
+      
+      <!-- Выезжающие списки кружков, школ, ПНЗ -->
+      <button class="accordion">Гуртки Кропивницького</button>
+      <div class="panel">
+        <ul class="list">
+          <li class="list-item">         
+            <?php foreach ($circle as $item) { ?>
+              <?php //echo $item->name_circle .'<br/>'; ?>
+              <form method="post" action="circle.php" class="list-item__link">
+               <input type="hidden" name="data" value="<?php echo $item->id ?>">
+               <button class="btn-circleName" type="submit" style="border: 0;background-color: #fffaea; cursor: pointer;"><?php echo $item->name_circle ?></button>
+             </form>
+           <?php }; ?>         
+         </li>
+       </ul>
+      </div>
+
+      
     </section>
 
     <section class="sbar">
@@ -106,6 +128,23 @@
     $('#showpanel').click(function () {
       $('#admin_form').toggle('slow');
     })
+  </script>
+  <!-- accordion script -->
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
   </script>
 </body>
 </html>

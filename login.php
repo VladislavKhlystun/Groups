@@ -53,7 +53,7 @@
 	<link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-	<p class="text">Натисніть <button id="toggle" class="other-auth__btn">Інша авторизація</button> якщо вам потрібно авторизуватися як керівник гуртка/звичайний користувач</p>
+	<p class="text">Натисніть <button id="toggle" class="other-auth__btn">Інша авторизація,</button> якщо вам потрібно авторизуватися як керівник гуртка/звичайний користувач</p>
 
 	<form action="login.php" method="POST" class="login-form">
 		<h2 class="login-title">Авторизація для учня</h2>

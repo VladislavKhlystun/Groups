@@ -175,7 +175,7 @@
      
           
   </div>
-      <a href="head_circle.php" class="get-back btm">Повернутись</a>
+      <a href="head_circle.php" class="get-back btm">Назад</a>
     </section>
     
   </div>
