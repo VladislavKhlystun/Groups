@@ -81,7 +81,7 @@
       if ($user) {
         if (password_verify($_POST['password'], $user->password)) {
           $_SESSION['logged_user'] = $user;
-          echo '<div style="position: absolute;top:0;left:45%;color:green;font-size:18px;">Вхід виконано!</div>';
+          echo '<div style="position: absolute;top:50%;left:45%;color:green;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Вхід виконано!</div>';
         } else {
           $errors[] = "Пароль невірний!";
         }
@@ -90,7 +90,7 @@
       }
       if ( ! empty($errors) ) {
       //выводим ошибки авторизации
-      echo '<div id="errors" style="position: absolute;top:0;left:45%;color:red;font-size:18px;">' .array_shift($errors). '</div>';
+      echo '<div id="errors" style="position: absolute;top:50%;left:45%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">' .array_shift($errors). '</div>';
     }
  ?> 
  <script> 

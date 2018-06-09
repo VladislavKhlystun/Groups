@@ -19,55 +19,55 @@ if ($role != 1) {
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/head_circle.css">
   <style>
-  .headerCircle {
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-  .headerCircle h1 {font-size: 23px;}
-  .circle__title {
-    font-weight: 600;
-    line-height: 22px;
-  }
-  .circle-list {
-    font-weight: 300;
-  }
-  .boss-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 2px solid;
-    margin: 20px auto;
-    padding: 10px;
-    width: 25%;
-  }
-  .edit_password {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px auto;
-    padding: 5px;
-    border: 2px solid;
-    width: 25%;
-  }
-  .editpasstitle {
-    font-weight: 600;
-    font-size: 20px;
-  }
-  .editpasslight {font-weight: 300;}
-  .but {
-    cursor: pointer;
-    border: 1px solid #000;
-    background-color: #ccc;
-    border-radius: 3px;
-    padding: 4px 0px;
-    margin-top: 5px;
-    width: max-content;
-  }
+    .headerCircle {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    .headerCircle h1 {font-size: 23px;}
+    .circle__title {
+      font-weight: 600;
+      line-height: 22px;
+    }
+    .circle-list {
+      font-weight: 300;
+    }
+    .boss-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 2px solid;
+      margin: 20px auto;
+      padding: 10px;
+      width: 25%;
+    }
+    .edit_password {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px auto;
+      padding: 5px;
+      border: 2px solid;
+      width: 25%;
+    }
+    .editpasstitle {
+      font-weight: 600;
+      font-size: 20px;
+    }
+    .editpasslight {font-weight: 300;}
+    .but {
+      cursor: pointer;
+      border: 1px solid #000;
+      background-color: #ccc;
+      border-radius: 3px;
+      padding: 4px 0px;
+      margin-top: 5px;
+      width: max-content;
+    }
   </style>
  <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -140,7 +140,7 @@ if ($role != 1) {
         	$id_circle_add = $_POST['select_circle_toAdd'];
         	$id_pupils_add = $_POST['select_user_toAdd'];
           if( $id_circle_add == 0 || $id_pupils_add == 0) {
-            echo '<div style="position: absolute;top:0;left:40%;color:red;font-size:18px;">Не вибрано гуртка або учня</div>';
+            echo '<div style="position: absolute;top:50%;left:40%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Не вибрано гуртка або учня</div>';
           } else {
         	$bean_toAdd = R::getAll('SELECT * FROM circlepupils WHERE pupils_id = :pupils AND circle_id = :circles', [':pupils' => $id_pupils_add, ':circles' => $id_circle_add]);
         	$bean_checkAmountCircles = R::getAll('SELECT * FROM circlepupils WHERE pupils_id = :pupils', [':pupils' => $id_pupils_add]);
@@ -199,7 +199,7 @@ if ($role != 1) {
       		$id_circle = $_POST['select_circle'];
       		$id_pupils = $_POST['select_delete'];
           if ($id_circle == 0 || $id_pupils == 0) {
-            echo '<div style="position: absolute;top:0;left:40%;color:red;font-size:18px;">Гурток або учень не вибраний для видалення</div>';
+            echo '<div style="position: absolute;top:50%;left:40%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Гурток або учень не вибраний для видалення</div>';
           } else {
       		$bean = R::getAll('SELECT * FROM circlepupils WHERE pupils_id = :pupils AND circle_id = :circles', [':pupils' => $id_pupils, ':circles' => $id_circle]);
       		
@@ -209,7 +209,7 @@ if ($role != 1) {
       		}
       		$deletingItem = R::load('circlepupils', $deleting_id_circle);
       		R::trash($deletingItem);
-          echo '<div style="position: absolute;top:0;left:40%;color:green;font-size:18px;">Видалено</div>';
+          echo '<div style="position: absolute;top:50%;left:40%;color:green;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Видалено</div>';
           } ?> 
           <script> 
     
@@ -347,7 +347,7 @@ if ($role != 1) {
           $id = $_SESSION['logged_user']->id;
           $item = R::load('heads', $id);
           if (trim($_POST['first_name']) == '' && trim($_POST['second_name']) == '' && trim($_POST['last_name']) == '' && trim($_POST['email']) == '' && trim($_POST['work_place']) == '' && trim($_POST['phone']) == '' && trim($_POST['address']) == '' && trim($_POST['social']) == '' ) {
-            echo '<div style="position: absolute;top:0;left:40%;color:red;font-size:18px;">Не введено інформації</div>';
+            echo '<div style="position: absolute;top:50%;left:40%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Не введено інформації</div>';
           } else {
                if ( trim($_POST['first_name']) != '' ) {
                         $item->first_name = $_POST['first_name'];
@@ -374,7 +374,7 @@ if ($role != 1) {
                         $item->social = $_POST['social'];
                     }
                     R::store($item);
-                    echo '<div style="position: absolute;top:0;left:40%;color:green;font-size:18px;">Інформацію оновлено</div>';
+                    echo '<div style="position: absolute;top:50%;left:40%;color:green;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Інформацію оновлено</div>';
                     $_SESSION['logged_user'] = $item; }?>
 
                     <script> 
@@ -424,7 +424,7 @@ if ($role != 1) {
         	$id_circle_toUpdate = 0;
         	$id_circle_toUpdate = $_POST['selectUpdate_circleInfo'];
         	if ($id_circle_toUpdate == 0) {
-        		echo '<div style="position: absolute;top:0;left:40%;color:red;font-size:18px;">Не вибрано гурток!</div>';
+        		echo '<div style="position: absolute;top:50%;left:40%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Не вибрано гурток!</div>';
         	} else {
           $circle_toUpdate = R::load('circle', $id_circle_toUpdate);
           if (trim($_POST['summary']) != '') {
@@ -437,7 +437,7 @@ if ($role != 1) {
             $circle_toUpdate->schedule = $_POST['schedule'];
           }
           R::store($circle_toUpdate);
-          echo '<div style="position: absolute;top:0;left:40%;color:green;font-size:18px;">Дані оновлено!</div>';
+          echo '<div style="position: absolute;top:50%;left:40%;color:green;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Дані оновлено!</div>';
           }
           ?>
 			
@@ -466,7 +466,7 @@ if ($role != 1) {
       if (isset($_POST['update_head_password'])) {
          $userToUpdate = R::load('heads', $id);
          if (trim($_POST['new_password']) == '' && trim($_POST['new_passwordConfirm']) == '' ) {
-          echo '<div style="position: absolute;top:0;left:45%;color:red;font-size:18px;">Не введено пароль</div>';
+          echo '<div style="position: absolute;top:50%;left:45%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Не введено пароль</div>';
          } else {
           if ( $_POST['new_passwordConfirm'] != $_POST['new_password'] ) {$errors[] = 'Повторний пароль введений невірно!';}
           if (empty($errors)) {
@@ -477,10 +477,10 @@ if ($role != 1) {
 
             $userToUpdate->password = password_hash($_POST['new_password'], PASSWORD_DEFAULT);
             R::store($userToUpdate);
-            echo '<div class="a" style="position: absolute;top:0;left:45%;color:green;font-size:18px;"> Пароль змінено! </div>';
+            echo '<div class="a" style="position: absolute;top:50%;left:45%;color:green;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);"> Пароль змінено! </div>';
             $_SESSION['logged_user'] = $userToUpdate;
           } else {
-            echo '<div id="errors" style="position: absolute;top:0;left:45%;color:red;font-size:18px;">' .array_shift($errors). '</div><hr>';
+            echo '<div id="errors" style="position: absolute;top:50%;left:45%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">' .array_shift($errors). '</div><hr>';
           }
       } ?> 
       <script> 

@@ -38,7 +38,7 @@
           <span class="circle__title">Позашкільний НЗ</span>
           <?php
           foreach ($NAMA as $key) {
-            echo $key->pnz;
+            echo '<div style="width:900px;margin-bottom: 20px;">'.$key->pnz.'</div>';
           }
           ?>
         </li>
@@ -47,7 +47,7 @@
           <span class="circle__title">Напрям</span>
           <?php
           foreach ($NAMA as $key) {
-            echo $key->direction;
+            echo '<div style="width:900px;margin-bottom: 20px;">'.$key->direction.'</div>';
           }
           ?>
         </li>
@@ -56,7 +56,7 @@
           <span class="circle__title">Назва гуртка</span>
           <?php
           foreach ($NAMA as $key) {
-            echo $key->name_circle;
+            echo '<div style="width:900px;margin-bottom: 20px;">'.$key->name_circle.'</div>';
           }
           ?>
         </li>
@@ -73,7 +73,7 @@
               echo 'Керівник відсутній...';
             }
             foreach ($head as $key => $item ) {
-              echo $item['second_name'] . ' ' . $item['first_name'] . ' ' . $item['last_name'] ;
+              echo '<div style="width:900px;margin-bottom: 20px;">'.$item['second_name'] . ' ' . $item['first_name'] . ' ' . $item['last_name'].'</div>';
             }
           ?>
         </li>
@@ -84,7 +84,7 @@
 
             foreach ($NAMA as $key) {
               if ($key->summary != ''){
-                echo $key->summary;
+                echo '<div style="width:900px;margin-bottom: 20px;">'.$key->summary.'</div>';
               } else {
                 echo 'Анотація відсутня на даний момент...';
               }
@@ -97,7 +97,7 @@
           <?php
             foreach ($NAMA as $key) {
               if  ($key->achievement != '') {
-                echo $key->achievement;
+                echo '<div style="width:900px;margin-bottom: 20px;">'.$key->achievement.'</div>';
               }
               else {
                 echo 'Досягнень поки немає...';
@@ -111,7 +111,7 @@
           <?php
             foreach ($NAMA as $key) {
               if($key->schedule != '') {
-              echo $key->schedule;
+              echo '<div style="width:900px;margin-bottom: 20px;">'.$key->schedule.'</div>';
             } else {
               echo 'Розклад недоступниий на даний момент...';
             }
@@ -135,7 +135,7 @@
           }
           $nw = R::loadAll('users', $id_pupils);
           foreach ($nw as $key => $item) {
-            echo $item['second_name'] . ' ' . $item['first_name'] . ' ' . $item['last_name'] . '<br/>' ;
+            echo '<div style="margin-bottom: 20px;margin-right:5px;padding-right:5px;border-right:1px solid #000;">'.$item['second_name'] . ' ' . $item['first_name'] . ' ' . $item['last_name'] .'<br/>'.'</div>';
           }
           ?>
         </li>
@@ -144,7 +144,7 @@
           <span class="circle__title">Адреса</span>
           <?php
             foreach ($NAMA as $key) {
-              echo $key->address;
+              echo '<div style="width:900px;margin-bottom: 20px;">'.$key->address.'</div>';
             }
           ?>
         <li>
@@ -154,7 +154,7 @@
           <span class="circle__title">Телефон</span>
           <?php
           foreach ($NAMA as $key) {
-            echo $key->phone;
+            echo '<div style="width:900px;margin-bottom: 20px;">'.$key->phone.'</div>';
           }
           ?> 
         </li>
@@ -164,7 +164,7 @@
           <span class="circle__title">Е-пошта</span>
           <?php
           foreach ($NAMA as $key) {
-            echo $key->email;
+            echo '<div style="width:900px;margin-bottom: 20px;">'.$key->email.'</div>';
           }
           ?>
         </li>
@@ -175,7 +175,7 @@
           <?php
             foreach ($NAMA as $key) {
               if ($key->web_site != '') {
-                echo $key->web_site;
+                echo '<div style="width:900px;margin-bottom: 20px;">' . $key->web_site . '</div>';
               } else {
                 echo 'Сайт відсутній';
               }

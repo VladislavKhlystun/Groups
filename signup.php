@@ -17,11 +17,11 @@
 
 		//проверка на существование одинакового certificate
 		if ( R::count('users', "certificate = ?", array($data['certificate'])) > 0) {
-			$errors[] = '<div style="position: absolute;top:0;left:45%;color:red;font-size:18px;">Користувач з таким свідоцтвом вже існує!</div><hr>';
+			$errors[] = '<div style="position: absolute;top:50%;left:45%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Користувач з таким свідоцтвом вже існує!</div><hr>';
 		}    
     //проверка на существование одинакового email
 		if ( R::count('users', "email = ?", array($data['email'])) > 0) {
-			$errors[] = '<div style="position: absolute;top:0;left:45%;color:red;font-size:18px;">Користувач з таким email вже існує!</div><hr>';
+			$errors[] = '<div style="position: absolute;top:50%;left:45%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Користувач з таким email вже існує!</div><hr>';
 		}
 
 		if ( empty($errors) )	{
@@ -46,9 +46,9 @@
 			mail("нужный нам е-майл", "New User", "Name:" . ' ' . $name .  "\r\nSurname: " . ' ' . $surname . "\r\nLast Name: " . ' ' . $lastName . "\r\nTelephone:" . ' ' . $phone . "\r\nE-mail:" . ' ' . $email, "From: e-mail сайта \r\n");
 			mail("$email", "Registration info", "Login: " . $email  . "\r\nPassword: " . $pass, "From: e-mail сайта \r\n");
 			R::store($user);
-			echo '<div style="position: absolute;top:0;left:45%;color:green;font-size:18px;">Ви успішно зареєстровані!</div><hr>';
+			echo '<div style="position: absolute;top:50%;left:45%;color:green;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Ви успішно зареєстровані!</div><hr>';
 		} else {
-			echo '<div id="errors" style="position: absolute;top:0;left:45%;color:red;font-size:18px;">' .array_shift($errors). '</div><hr>';
+			echo '<div id="errors" style="position: absolute;top:50%;left:45%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">' .array_shift($errors). '</div><hr>';
 		} ?> 
 		<script> 
 
@@ -73,7 +73,7 @@
 
     //проверка на существование одинакового email
 		if ( R::count('heads', "email = ?", array($data['email'])) > 0) {
-			$errors[] = '<div style="position: absolute;top:0;left:45%;color:red;font-size:18px;">Користувач з таким email вже існує!</div>';
+			$errors[] = '<div style="position: absolute;top:50%;left:45%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Користувач з таким email вже існує!</div>';
 		}
 
 		if ( empty($errors) )	{
@@ -93,9 +93,9 @@
 			$pass = $data['password']; $pass = htmlspecialchars($pass); $pass = urldecode($pass); 
 			mail("$email", "Registration info", "Login: " . $email  . "\r\nPassword: " . $pass, "From: e-mail сайта \r\n");
 			R::store($user);
-			echo '<div style="position: absolute;top:0;left:45%;color:green;font-size:18px;">Ви успішно зареєстровані!</div><hr>';
+			echo '<div style="position: absolute;top:50%;left:45%;color:green;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Ви успішно зареєстровані!</div><hr>';
 		} else {
-			echo '<div id="errors" style="position: absolute;top:0;left:45%;color:red;font-size:18px;">' .array_shift($errors). '</div><hr>';
+			echo '<div id="errors" style="position: absolute;top:50%;left:45%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">' .array_shift($errors). '</div><hr>';
 		} ?> 
 		 <script> 
 
@@ -114,7 +114,7 @@
 	<link rel="stylesheet" href="css/signup.css">
 </head>
 <body>
-	<div style="width: 50%; margin: 50px auto 0; text-align: center;">	
+	<div style="width: 50%; margin: 0 auto; text-align: center;">	
 		<button type="submit" id="toggle" class="tog-btn">Реєстрація Керівника</button>
 		<button type="submit" id="toggle2" class="tog-btn">Реєстрація Учня</button>
 	</div>

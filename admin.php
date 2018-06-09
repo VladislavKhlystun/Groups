@@ -46,9 +46,9 @@ if ( isset($data['submit_create']) ) {
 $message = wordwrap($message, 70, "\r\n");
 // Отправляем
 mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
-    echo '<div style="position: absolute;top:0;left:40%;color:green;font-size:18px;">Гурток створено!</div>';
+    echo '<div style="position: absolute;top:50%;left:40%;color:green;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Гурток створено!</div>';
 } else {
-    echo '<div id="errors" style="color:red;position: absolute;top:0;left:40%;font-size:18px;"">' .array_shift($errors). '</div>';
+    echo '<div id="errors" style="color:red;position: absolute;top:50%;left:40%;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">' .array_shift($errors). '</div>';
 }
  ?> 
 <script> 
@@ -68,7 +68,7 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
       $id = 0;
       $id = $_POST['del'];
       if ($id == 0) {
-        echo '<div style="position: absolute;top:0;left:45%;color:red;font-size:18px;"> Гурток не вибрано! </div>';
+        echo '<div style="position: absolute;top:50%;left:45%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);"> Гурток не вибрано! </div>';
     } else {
        $del = R::load('circle',  $id);     
           $delCircle_id = $del->id;
@@ -76,9 +76,9 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
           $amountUsers_inCircle = count($users_inDeletingCircle);
           if ($amountUsers_inCircle == 0) {
           R::trash( $del ); 
-           echo '<div id="a" style="position: absolute;top:0;left:45%;color:green;font-size:18px;">Гурток видалено!</div>';
+           echo '<div id="a" style="position: absolute;top:50%;left:45%;color:green;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Гурток видалено!</div>';
         } else {
-          echo '<div id="a" style="position: absolute;top:0;left:30%;color:red;font-size:18px;">В гуртку ще є учні. Видаліть спочатку всіх учнів з гуртка для видалення!</div>';
+          echo '<div id="a" style="position: absolute;top:50%;left:30%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">В гуртку ще є учні. Видаліть спочатку всіх учнів з гуртка для видалення!</div>';
         }
            
     }
@@ -98,7 +98,7 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
                   $id = 0;
                 $id = $_POST['select_circle'];
                 if ($id == 0) {
-                 echo '<div style="position: absolute;top:0;left:45%;color:red;font-size:18px;z-index:9999;"> Гурток не вибрано! </div>';
+                 echo '<div style="position: absolute;top:50%;left:45%;color:red;font-size:18px;z-index:9999;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);"> Гурток не вибрано! </div>';
                 } else {
                 $item = R::load('circle', $id);
                     if ( trim($_POST['pnz']) != '' ) {
@@ -122,7 +122,7 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
                     if ( trim($_POST['web_site']) != '' ) {
                         $item->web_site = $_POST['web_site'];
                     }
-                     echo '<div style="position: absolute;top:0;left:45%;color:green;font-size:18px;z-index:9999;">Гурток відредаговано!</div>';
+                     echo '<div style="position: absolute;top:50%;left:45%;color:green;font-size:18px;z-index:9999;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Гурток відредаговано!</div>';
                     R::store($item); 
                    }
                     ?>
@@ -142,12 +142,12 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
                     $head_id = $_POST['head'];
                     $circle_id = $_POST['circle'];
                     if ($head_id == 0 || $circle_id == 0) {
-                      echo '<div style="position: absolute;top:0;left:45%;color:red;font-size:18px;z-index:9999;"> Гурток або керівник не вибраний! </div>';
+                      echo '<div style="position: absolute;top:50%;left:45%;color:red;font-size:18px;z-index:9999;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);"> Гурток або керівник не вибраний! </div>';
                     } else {
                     $item = R::load('circle', $circle_id);
                     $item->head_id = $head_id;
                     R::store($item);
-                    echo '<div id="a" style="position: absolute;top:0;left:45%;color:green;font-size:18px;z-index:9999;"> Керівника призначено!</div>';
+                    echo '<div id="a" style="position: absolute;top:50%;left:45%;color:green;font-size:18px;z-index:9999;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);"> Керівника призначено!</div>';
                   }
                     ?> 
                      <script> 
@@ -449,7 +449,7 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
       if (isset($_POST['update_adminInfo'])) {
           $itemToUpdate = R::load('admin', $admin_id);
           if (trim($_POST['first_name']) == '' && trim($_POST['second_name']) == '' && trim($_POST['last_name']) == '' && trim($_POST['address']) == '' && trim($_POST['phone']) == '' && trim($_POST['email']) == '' && trim($_POST['web_site']) == '') {
-            echo '<div style="position: absolute;top:0;left:45%;color:red;font-size:18px;">Не введено інформації</div>';
+            echo '<div style="position: absolute;top:50%;left:45%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Не введено інформації</div>';
           } else {
 
           if (trim($_POST['first_name']) != '') {
@@ -475,7 +475,7 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
           }
           R::store($itemToUpdate);
           $_SESSION['logged_user'] = $itemToUpdate;
-          echo '<div class="a" style="position: absolute;top:0;left:45%;color:green;font-size:18px;"> Дані оновлено! </div>' ;
+          echo '<div class="a" style="position: absolute;top:50%;left:45%;color:green;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);"> Дані оновлено! </div>' ;
           }?> 
           <script> 
             function func() {
@@ -501,7 +501,7 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
       if (isset($_POST['update_password'])) {
          $itemToUpdate = R::load('admin', $admin_id);
          if (trim($_POST['new_password']) == '' && trim($_POST['new_passwordConfirm']) == '' ) {
-          echo '<div style="position: absolute;top:0;left:45%;color:red;font-size:18px;">Не введено пароль</div>';
+          echo '<div style="position: absolute;top:50%;left:45%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Не введено пароль</div>';
          } else {
           if ( $_POST['new_passwordConfirm'] != $_POST['new_password'] ) {$errors[] = 'Повторний пароль введений невірно!';}
           if (empty($errors)) {
@@ -510,10 +510,10 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
              mail("$email", "Password Changed", "Login: " . $email  . "\r\nPassword: " . $pass, "From: e-mail сайта \r\n");
             $itemToUpdate->password = password_hash($_POST['new_password'], PASSWORD_DEFAULT);
             R::store($itemToUpdate);
-            echo '<div class="a" style="position: absolute;top:0;left:45%;color:green;font-size:18px;"> Пароль змінено! </div>';
+            echo '<div class="a" style="position: absolute;top:50%;left:45%;color:green;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);"> Пароль змінено! </div>';
             $_SESSION['logged_user'] = $itemToUpdate;
           } else {
-            echo '<div id="errors" style="position: absolute;top:0;left:45%;color:red;font-size:18px;">' .array_shift($errors). '</div>';
+            echo '<div id="errors" style="position: absolute;top:50%;left:45%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">' .array_shift($errors). '</div>';
           }
       }?> 
       <script> 

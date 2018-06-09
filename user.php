@@ -236,7 +236,7 @@ if ($role != 2) {
 <?php 
 if (isset($_POST['update'])) {
   if ( trim($_POST['first_name']) == '' && trim($_POST['second_name']) == '' && trim($_POST['last_name']) == '' && trim($_POST['certificate']) == '' && trim($_POST['email']) == '' && trim($_POST['school']) == '' && trim($_POST['phone']) == '' && trim($_POST['address']) == '' && trim($_POST['social']) == '') {
-    echo '<div style="position: absolute;top:0;left:40%;color:red;font-size:18px;">Не введено ні одного поля</div>';
+    echo '<div style="position: absolute;top:50%;left:40%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Не введено ні одного поля</div>';
   } else {
   $id = $_SESSION['logged_user']->id;
   $item = R::load('users', $id);
@@ -268,7 +268,7 @@ if (isset($_POST['update'])) {
     $item->social = $_POST['social'];
   }
   R::store($item);
-  echo '<div style="position: absolute;top:0;left:40%;color:green;font-size:18px;"> Інформацію оновлено</div>';
+  echo '<div style="position: absolute;top:50%;left:40%;color:green;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);"> Інформацію оновлено</div>';
   $_SESSION['logged_user'] = $item;} ?>
 
   <script> 
@@ -306,10 +306,10 @@ if (isset($_POST['update'])) {
             
 
             R::store($userToUpdate);
-            echo '<div class="a" style="position: absolute;top:0;left:30%;color:green;font-size:18px;"> Пароль змінено! Логін та новий пароль відправленно на ваш Email</div>';
+            echo '<div class="a" style="position: absolute;top:50%;left:30%;color:green;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);"> Пароль змінено! Логін та новий пароль відправленно на ваш Email</div>';
             $_SESSION['logged_user'] = $userToUpdate;
           } else {
-            echo '<div id="errors" style="position: absolute;top:0;left:40%;color:red;font-size:18px;">' .array_shift($errors). '</div>';
+            echo '<div id="errors" style="position: absolute;top:50%;left:40%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">' .array_shift($errors). '</div>';
           }
       ?> 
       <script> 

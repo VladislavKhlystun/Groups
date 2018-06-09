@@ -9,7 +9,7 @@
 			if ( password_verify($data['password'], $user->password) ) {
 				//если пароль совпадает, то нужно авторизовать пользователя
 				$_SESSION['logged_user'] = $user;
-				echo '<div style="color: green;font-size: 18px;text-align: center;">Ви авторизовані!<br/> Можете перейти на <a href="/">головну</a> сторінку.</div><hr>';
+				echo '<div style="position: absolute;top:50%;left:35%;color:green;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);text-align: center;">Ви авторизовані!<br/> Можете перейти на <a href="/">головну</a> сторінку.</div><hr>';
 			} else {
 				$errors[] = 'Невірно введено пароль!';
 			}
@@ -19,7 +19,7 @@
 		
 		if ( ! empty($errors) ) {
 			//выводим ошибки авторизации
-			echo '<div id="errors" style="color:red;text-align: center;">' .array_shift($errors). '</div><hr>';
+			echo '<div id="errors" style="position: absolute;top:50%;left:35%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);text-align: center;">' .array_shift($errors). '</div><hr>';
 		}
 	}
 
@@ -30,7 +30,7 @@
 			if ( password_verify($data['password'], $user->password) ) {
 				//если пароль совпадает, то нужно авторизовать пользователя
 				$_SESSION['logged_user'] = $user;
-				echo '<div style="color: green;font-size: 18px;text-align: center;">Ви авторизовані!<br/> Можете перейти на <a href="/">головну</a> сторінку.</div><hr>';
+				echo '<div style="position: absolute;top:50%;left:35%;color:green;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);text-align: center;">Ви авторизовані!<br/> Можете перейти на <a href="/">головну</a> сторінку.</div><hr>';
 			} else {
 				$errors[] = 'Невірно введено пароль!';
 			}
@@ -40,7 +40,7 @@
 		
 		if ( ! empty($errors) ) {
 			//выводим ошибки авторизации
-			echo '<div id="errors" style="color:red;text-align: center;">' .array_shift($errors). '</div><hr>';
+			echo '<div id="errors" style="position: absolute;top:50%;left:35%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);text-align: center;">' .array_shift($errors). '</div><hr>';
 		}
 	}
 ?>
