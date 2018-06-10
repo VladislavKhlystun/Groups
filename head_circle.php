@@ -68,6 +68,29 @@ if ($role != 1) {
       margin-top: 5px;
       width: max-content;
     }
+    /*footer*/
+    .footer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 158px;
+      border-top: 1px solid #000;
+    }
+    .footer-block {
+      display: flex;
+      justify-content: center;
+      font-size: 18px;
+    }
+    .footer__span {margin-right: 3px;}
+    .footer__link {
+      color:#000;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .footer__link:hover {
+      color:#445454;
+      text-decoration: underline;
+    }
   </style>
  <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -501,6 +524,13 @@ if ($role != 1) {
           </script>
     <?php }
     ?>
+
+    <footer class="footer">
+      <div class="footer-block">
+        <span class="footer__span">Розробник</span>
+        <a href="http://www.kntu.kr.ua/" class="footer__link">ЦНТУ</a>
+      </div>
+    </footer>
 
 		<script>
 			$(document).ready(function () {

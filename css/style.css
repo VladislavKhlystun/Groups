@@ -150,6 +150,7 @@ body {
           justify-content: space-between;
   max-width: 1190px;
   margin: 0 auto;
+  width: 66vh;
   /* Стили контента сайта*/
   /* Стили сайдбара сайта*/
 }

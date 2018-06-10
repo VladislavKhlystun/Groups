@@ -26,9 +26,28 @@ require 'db.php';
     display: none;
     margin-left: 10px;
   }
-  .footer {}
-  .footer__span {}
-  .footer__link {}
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 158px;
+    border-top: 1px solid #000;
+  }
+  .footer-block {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+  }
+  .footer__span {margin-right: 3px;}
+  .footer__link {
+    color:#000;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .footer__link:hover {
+    color:#445454;
+    text-decoration: underline;
+  }
 </style>
 </head>
 <body>
@@ -704,17 +723,6 @@ require 'db.php';
     <a class="sbar-block__link" href="/signup.php">Реєстрація</a>
   </div>    		
 <?php endif; ?>
-
-<div style="position: absolute;top: 79%;right: 0;"> <span style="cursor: pointer;cursor: pointer;display: flex;justify-content: center;border: 1px solid;border-radius: 3px;padding: 3px;" id="showpanel">  Увійти в адмінпанель </span>
-  <form action="index.php" method="post" id="admin_form" class="df" style="display: none;">
-    <div style="margin: 5px;">Логін</div>
-    <input type="text" style="margin-bottom: 5px;" name="login">
-
-    <div style="margin: 5px;">Пароль</div>
-    <input type="password" style="margin-bottom: 5px;" name="password" >
-    <button type="submit" name="login_admin" style="margin: 0 auto;">Вхід</button>
-  </form>
-</div>
 </section>
 </div>
 <?php 
@@ -736,14 +744,6 @@ if (isset($_POST['login_admin'])) {
     echo '<div id="errors" style="position: absolute;top:50%;left:45%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">' .array_shift($errors). '</div>';
   }
   ?> 
-
-  <footer class="footer">
-    <span class="footer__span">Розробник</span>
-    <a href="http://www.kntu.kr.ua/" class="footer__link">ЦНТУ</a>
-  </footer>
-
-
-
   <script> 
     function func() {
       window.location.href = 'index.php';
@@ -751,6 +751,28 @@ if (isset($_POST['login_admin'])) {
     setTimeout(func, 2000); 
   </script> 
   <?php } ?>
+
+
+
+  <footer class="footer">
+    <div class="footer-block">
+      <span class="footer__span">Розробник</span>
+      <a href="http://www.kntu.kr.ua/" class="footer__link">ЦНТУ</a>
+    </div>
+
+    <div style="position: absolute;right: 0;"><!-- position: absolute;top: 79%;right: 0; -->
+      <span style="cursor: pointer;cursor: pointer;display: flex;justify-content: center;border: 1px solid;border-radius: 3px;padding: 3px;" id="showpanel">  Увійти в адмінпанель </span>
+      <form action="index.php" method="post" id="admin_form" class="df" style="display: none;">
+        <div style="margin: 5px;">Логін</div>
+        <input type="text" style="margin-bottom: 5px;" name="login">
+
+        <div style="margin: 5px;">Пароль</div>
+        <input type="password" style="margin-bottom: 5px;" name="password" >
+        <button type="submit" name="login_admin" style="margin: 0 auto;">Вхід</button>
+      </form>
+    </div>
+  </footer>
+
   <!-- scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   <script >

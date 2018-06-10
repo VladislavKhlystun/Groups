@@ -203,6 +203,29 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
       margin-top: 5px;
       width: max-content;
     }
+    /*footer*/
+    .footer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 158px;
+      border-top: 1px solid #000;
+    }
+    .footer-block {
+      display: flex;
+      justify-content: center;
+      font-size: 18px;
+    }
+    .footer__span {margin-right: 3px;}
+    .footer__link {
+      color:#000;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .footer__link:hover {
+      color:#445454;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -557,6 +580,26 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
           </script>
     <?php }
     ?>
+
+  <footer class="footer">
+    <div class="footer-block">
+      <span class="footer__span">Розробник</span>
+      <a href="http://www.kntu.kr.ua/" class="footer__link">ЦНТУ</a>
+    </div>
+
+    <!-- <div style="position: absolute;right: 0;">
+      <span style="cursor: pointer;cursor: pointer;display: flex;justify-content: center;border: 1px solid;border-radius: 3px;padding: 3px;" id="showpanel">  Увійти в адмінпанель </span>
+      <form action="index.php" method="post" id="admin_form" class="df" style="display: none;">
+        <div style="margin: 5px;">Логін</div>
+        <input type="text" style="margin-bottom: 5px;" name="login">
+
+        <div style="margin: 5px;">Пароль</div>
+        <input type="password" style="margin-bottom: 5px;" name="password" >
+        <button type="submit" name="login_admin" style="margin: 0 auto;">Вхід</button>
+      </form>
+    </div> -->
+  </footer>
+
 <!-- scripts -->
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 <script src="js/jquery.maskedinput.min.js"></script>
