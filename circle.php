@@ -121,6 +121,7 @@
 
         <li class="circle-list">
           <span class="circle__title">Учні</span>
+          <div>
           <?php
           $pupils = R::findAll('circlepupils', 'circle_id = ?', [$text]);
           $amountPupils = count($pupils);
@@ -135,9 +136,10 @@
           }
           $nw = R::loadAll('users', $id_pupils);
           foreach ($nw as $key => $item) {
-            echo '<div style="margin-bottom: 20px;margin-right:5px;padding-right:5px;border-right:1px solid #000;">'.$item['second_name'] . ' ' . $item['first_name'] . ' ' . $item['last_name'] .'<br/>'.'</div>';
+            echo '<div style="margin-bottom: 20px;margin-right:5px;padding-right:5px;border-bottom:1px solid #000;">'.$item['second_name'] . ' ' . $item['first_name'] . ' ' . $item['last_name'] .'</div>' ;
           }
           ?>
+        </div>
         </li>
 
         <li class="circle-list">

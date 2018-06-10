@@ -359,8 +359,13 @@ if ($role != 1) {
                         $item->last_name = $_POST['last_name'];
                     }
                      if ( trim($_POST['email']) != '' ) {
+                      if (R::count('heads', 'email = ?', [$_POST['email']]) > 0) {
+                         $errors[] = '<div style="position: absolute;top:50%;left:40%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);"Користувач з таким e-mail вже існує!</div>';
+                      } else {
                         $item->email = $_POST['email'];
-                    }
+                        }
+                      }
+                    
                      if ( trim($_POST['work_place']) != '' ) {
                         $item->work_place = $_POST['work_place'];
                     }
@@ -372,10 +377,15 @@ if ($role != 1) {
                     }
                     if ( trim($_POST['social']) != '' ) {
                         $item->social = $_POST['social'];
-                    }
+                    } 
+                    if (empty($errors)) {
                     R::store($item);
                     echo '<div style="position: absolute;top:50%;left:40%;color:green;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Інформацію оновлено</div>';
-                    $_SESSION['logged_user'] = $item; }?>
+                    $_SESSION['logged_user'] = $item; 
+                  } else {
+                    echo array_shift($errors);
+                  }
+                  }?>
 
                     <script> 
 
