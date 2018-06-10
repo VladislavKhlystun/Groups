@@ -229,10 +229,43 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
     <section class="content-hide" id="content1">
       <form class="form" action="admin.php" method="post">
         <label for="1" class="form__label">Позашкільний НЗ</label>
-        <input type="text" class="form__input" id="1" name="pnz">
+        <!-- <input type="text" class="form__input" id="1" name="pnz"> -->
+        <select name="pnz" class="form__input" id="1">
+          <option value="Дитячий юнацький центр 'Перлинка'">Дитячий юнацький центр "Перлинка"</option>
+          <option value="Центр позашкільного виховання 'Контакт'">Центр позашкільного виховання "Контакт"</option>
+          <option value="Центр естетичного виховання 'Натхнення'">Центр естетичного виховання "Натхнення"</option>
+          <option value="Позашкільний центр НВО №8">Позашкільний центр НВО №8</option>
+          <option value="Центр естетичного виховання НВК 'Кіровоградський колегіум'">Центр естетичного виховання НВК "Кіровоградський колегіум"</option>
+          <option value="Центр естетичного виховання 'Росток'">Центр естетичного виховання "Росток"</option>
+          <option value="Дитячий юнацький центр 'Явір'">Дитячий юнацький центр "Явір"</option>
+          <option value="Дитячий юнацький центр 'Лідер'">Дитячий юнацький центр "Лідер"</option>
+          <option value="Центр естетичного виховання 'Калинка' НВО №17">Центр естетичного виховання "Калинка" НВО №17</option>
+          <option value="Центр дитячої та юнацької юнацької творчості 'Надія' НВО № 18">Центр дитячої та юнацької юнацької творчості "Надія" НВО № 18</option>
+          <option value="Позашкільний центр НВО № 19">Позашкільний центр НВО № 19</option>
+          <option value="ДЮЦ 'Сузір'я'">ДЮЦ "Сузір'я"</option>
+          <option value="Центр дитячої та юнацької творчості 'Оберіг'">Центр дитячої та юнацької творчості "Оберіг"</option>
+          <option value="Центр позашкільного виховання 'Ліра'">Центр позашкільного виховання "Ліра"</option>
+          <option value="Дитячий юнацький центр 'Зорецвіт'">Дитячий юнацький центр "Зорецвіт"</option>
+          <option value="ЦДЮТ 'Сузір'я'">ЦДЮТ "Сузір'я"</option>
+          <option value="Позашкільний центр 'Школа мистецтв' НВО №32">Позашкільний центр "Школа мистецтв" НВО №32</option>
+          <option value="Дитячо-юнацький центр НВО № 34">Дитячо-юнацький центр НВО № 34</option>
+          <option value="Позашкільний центр 'Дивосвіт' НВО № 35">Позашкільний центр "Дивосвіт" НВО № 35</option>
+          <option value="Станція юних техніків">Станція юних техніків</option>
+          <option value="Будинок дитячої та юнацької творчості">Будинок дитячої та юнацької творчості</option>
+          <option value="Центр науково-технічної творчості 'Каскад'">Центр науково-технічної творчості "Каскад"</option>
+          <option value="Школа естетичного виховання 'В гостях у казки'">Школа естетичного виховання "В гостях у казки"</option>
+          <option value="Центр дитячої та юнацької творчості 'Центр-Юність'">Центр дитячої та юнацької творчості "Центр-Юність"</option>
+        </select>
 
         <label for="2" class="form__label">Напрям</label>
-        <input type="text" class="form__input" id="2" name="direction">
+        <!-- <input type="text" class="form__input" id="2" name="direction"> -->
+        <select name="direction" class="form__input" id="2">
+          <option value="Програмування">Програмування</option>
+          <option value="Вишивка">Вишивка</option>
+          <option value="Танці">Танці</option>
+          <option value="Художнє мистецтво">Художнє мистецтво</option>
+          <option value="Хор">Хор</option>
+        </select>
 
         <label for="3" class="form__label">Назва гуртка</label>
         <input type="text" class="form__input" id="3" name="name_circle">

@@ -26,6 +26,9 @@ require 'db.php';
     display: none;
     margin-left: 10px;
   }
+  .footer {}
+  .footer__span {}
+  .footer__link {}
 </style>
 </head>
 <body>
@@ -702,7 +705,7 @@ require 'db.php';
   </div>    		
 <?php endif; ?>
 
-<div style="margin-top: 150px;"> <span style="cursor: pointer;cursor: pointer;display: flex;justify-content: center;border: 1px solid;border-radius: 3px;padding: 3px;" id="showpanel">  Увійти в адмінпанель </span>
+<div style="position: absolute;top: 79%;right: 0;"> <span style="cursor: pointer;cursor: pointer;display: flex;justify-content: center;border: 1px solid;border-radius: 3px;padding: 3px;" id="showpanel">  Увійти в адмінпанель </span>
   <form action="index.php" method="post" id="admin_form" class="df" style="display: none;">
     <div style="margin: 5px;">Логін</div>
     <input type="text" style="margin-bottom: 5px;" name="login">
@@ -733,6 +736,14 @@ if (isset($_POST['login_admin'])) {
     echo '<div id="errors" style="position: absolute;top:50%;left:45%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">' .array_shift($errors). '</div>';
   }
   ?> 
+
+  <footer class="footer">
+    <span class="footer__span">Розробник</span>
+    <a href="http://www.kntu.kr.ua/" class="footer__link">ЦНТУ</a>
+  </footer>
+
+
+
   <script> 
     function func() {
       window.location.href = 'index.php';

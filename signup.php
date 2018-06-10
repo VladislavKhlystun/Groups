@@ -17,11 +17,11 @@
 
 		//проверка на существование одинакового certificate
 		if ( R::count('users', "certificate = ?", array($data['certificate'])) > 0) {
-			$errors[] = '<div style="position: absolute;top:50%;left:45%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Користувач з таким свідоцтвом вже існує!</div><hr>';
+			$errors[] = 'Користувач з таким свідоцтвом вже існує!';//<div style="position: absolute;top:50%;left:45%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);"></div><hr>
 		}    
     //проверка на существование одинакового email
 		if ( R::count('users', "email = ?", array($data['email'])) > 0) {
-			$errors[] = '<div style="position: absolute;top:50%;left:45%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Користувач з таким email вже існує!</div><hr>';
+			$errors[] = 'Користувач з таким email вже існує!';//<div style="position: absolute;top:50%;left:45%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);"></div><hr>
 		}
 
 		if ( empty($errors) )	{
@@ -73,7 +73,7 @@
 
     //проверка на существование одинакового email
 		if ( R::count('heads', "email = ?", array($data['email'])) > 0) {
-			$errors[] = '<div style="position: absolute;top:50%;left:45%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Користувач з таким email вже існує!</div>';
+			$errors[] = 'Користувач з таким email вже існує!';//<div style="position: absolute;top:50%;left:45%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);"></div>
 		}
 
 		if ( empty($errors) )	{
@@ -93,7 +93,7 @@
 			$pass = $data['password']; $pass = htmlspecialchars($pass); $pass = urldecode($pass); 
 			mail("$email", "Registration info", "Login: " . $email  . "\r\nPassword: " . $pass, "From: e-mail сайта \r\n");
 			R::store($user);
-			echo '<div style="position: absolute;top:50%;left:45%;color:green;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Ви успішно зареєстровані!</div><hr>';
+			echo '<div style="position: absolute;top:50%;left:30%;color:green;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Ви успішно зареєстровані! Можете перейти на <a href="/">головну</a> сторінку.</div><hr>';
 		} else {
 			echo '<div id="errors" style="position: absolute;top:50%;left:45%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">' .array_shift($errors). '</div><hr>';
 		} ?> 
@@ -102,7 +102,7 @@
     function func() {
       window.location.href = 'signup.php';
     }
-    setTimeout(func, 2000); 
+    setTimeout(func, 5000); 
   </script> 
 	<?php } ?>
 
