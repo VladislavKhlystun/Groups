@@ -14,8 +14,10 @@ $data = $_POST;
 if ( isset($data['submit_create']) ) {
   // проверка формы на пустоту полей
   $errors = array();
-  if ( trim($data['pnz']) == '' )         {$errors[] = 'Введіть позашкільний навчальний заклад';}
-  if ( trim($data['direction']) == '' )   {$errors[] = 'Введіть напрям';}
+  if ($data['pnz'] == '0') {$errors[] = 'Позашкільний навчальний заклад не вибрано!';}
+  if ($data['direction'] == '0') {$errors[] = 'Напрям не вибрано!';}
+  /*if ( trim($data['pnz']) == '' )         {$errors[] = 'Введіть позашкільний навчальний заклад';}*/
+/*  if ( trim($data['direction']) == '' )   {$errors[] = 'Введіть напрям';}*/
   if ( trim($data['name_circle']) == '' ) {$errors[] = 'Введіть назву гуртка';}
   // if ( trim($data['head_id']) == '' )     {$errors[] = 'Введіть head_circle';}
 /*  if ( trim($data['achievement']) == '' ) {$errors[] = 'Введіть досягнення';}*/
@@ -23,13 +25,14 @@ if ( isset($data['submit_create']) ) {
   if ( trim($data['address']) == '' )     {$errors[] = 'Введіть адресу';}
   if ( trim($data['phone']) == '' )       {$errors[] = 'Введіть телефон';}
   if ( trim($data['email']) == '' )       {$errors[] = 'Введіть email';}
+
   //проверка на существование одинакового name_circle
   if ( R::count('circle', "name_circle = ?", array($data['name_circle'])) > 0) {
     $errors[] = 'Гурток з таким ім\'ям вже існує!';
   }
   if ( empty($errors) )  {
     //ошибок нет, теперь регистрируем
-    $circle = R::dispense('circle');
+    $circle = R::dispense('circle');        
     $circle->pnz = $data['pnz'];
     $circle->direction = $data['direction'];
     $circle->name_circle = $data['name_circle'];
@@ -73,15 +76,18 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
        $del = R::load('circle',  $id);     
           $delCircle_id = $del->id;
           $users_inDeletingCircle = R::findAll('circlepupils', 'circle_id = ?', [$delCircle_id]);
-          $amountUsers_inCircle = count($users_inDeletingCircle);
-          if ($amountUsers_inCircle == 0) {
+          $ids = []; $i = 0;
+          foreach ($users_inDeletingCircle as $key => $item) {
+            $ids[$i] = $item['id'];
+            $i++;
+          }
+          $deleteItems = R::loadAll('circlepupils', $ids);
+          R::trashAll($deleteItems);
           R::trash( $del ); 
            echo '<div id="a" style="position: absolute;top:50%;left:45%;color:green;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">Гурток видалено!</div>';
-        } else {
-          echo '<div id="a" style="position: absolute;top:50%;left:30%;color:red;font-size:18px;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);">В гуртку ще є учні. Видаліть спочатку всіх учнів з гуртка для видалення!</div>';
-        }
+        } 
            
-    }
+    
   ?>
   <script> 
     
@@ -99,14 +105,12 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
                 $id = $_POST['select_circle'];
                 if ($id == 0) {
                  echo '<div style="position: absolute;top:50%;left:45%;color:red;font-size:18px;z-index:9999;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);"> Гурток не вибрано! </div>';
-                } else {
+                } else  {
                 $item = R::load('circle', $id);
-                    if ( trim($_POST['pnz']) != '' ) {
+                    /*if ( trim($_POST['pnz']) != '' ) {
                         $item->pnz = $_POST['pnz'];
-                    }
-                    if ( trim($_POST['direction']) != '' ) {
-                        $item->direction = $_POST['direction'];
-                    }
+                    }*/
+                    
                     if ( trim($_POST['name_circle']) != '' ) {
                         $item->name_circle = $_POST['name_circle'];
                     }
@@ -254,6 +258,7 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
         <label for="1" class="form__label">Позашкільний НЗ</label>
         <!-- <input type="text" class="form__input" id="1" name="pnz"> -->
         <select name="pnz" class="form__input" id="1">
+          <option value="0">Вибрати позашкільний навчальний заклад...</option>
           <option value="Дитячий юнацький центр 'Перлинка'">Дитячий юнацький центр "Перлинка"</option>
           <option value="Центр позашкільного виховання 'Контакт'">Центр позашкільного виховання "Контакт"</option>
           <option value="Центр естетичного виховання 'Натхнення'">Центр естетичного виховання "Натхнення"</option>
@@ -283,6 +288,7 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
         <label for="2" class="form__label">Напрям</label>
         <!-- <input type="text" class="form__input" id="2" name="direction"> -->
         <select name="direction" class="form__input" id="2">
+          <option value="0">Вибрати напрям...</option>
           <option value="Програмування">Програмування</option>
           <option value="Вишивка">Вишивка</option>
           <option value="Танці">Танці</option>
@@ -344,10 +350,13 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
     </section>
 
     <section class="content-hide" id="content3">
-
-      <form class="form" action="admin.php" method="post">
+      <div class="circle_info">
         
-         <select name="select_circle" id="" class="del-circle__select" style="width: 50%;">
+      </div>
+      <form class="form" action="admin.php" method="post">
+       
+
+         <select name="select_circle" id="edit_circle" class="del-circle__select" style="width: 50%;">
           <option value="0">Вибрати гурток...</option>
           <?php 
           $id = 0;
@@ -358,11 +367,22 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
         </select>
         
 
-        <label for="1" class="form__label">Позашкільний НЗ</label>
+        <!-- <label for="1" class="form__label">Позашкільний НЗ</label>
         <input type="text" class="form__input" id="1" name="pnz">
-
+        
         <label for="2" class="form__label">Напрям</label>
-        <input type="text" class="form__input" id="2" name="direction">
+        <input type="text" class="form__input" id="2" name="direction"> -->
+
+   <!--      <label for="2" class="form__label">Напрям</label>
+   <input type="text" class="form__input" id="2" name="direction">
+   <select name="direction" class="form__input" id="2">
+     <option value="0">Вибрати напрям...</option>
+     <option value="Програмування">Програмування</option>
+     <option value="Вишивка">Вишивка</option>
+     <option value="Танці">Танці</option>
+     <option value="Художнє мистецтво">Художнє мистецтво</option>
+     <option value="Хор">Хор</option>
+   </select> -->
 
         <label for="3" class="form__label">Назва гуртка</label>
         <input type="text" class="form__input" id="3" name="name_circle">
@@ -381,6 +401,8 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
 
         <button class="form__btn" name="submit_edit">Редагувати гурток</button>
       </form>
+
+      
     </section>
 
     <section class="content-hide" id="content4">
@@ -603,6 +625,23 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
 <!-- scripts -->
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 <script src="js/jquery.maskedinput.min.js"></script>
+
+<script>
+      $(document).ready(function () {
+        $('#edit_circle').change(function() {
+          $.ajax({
+            type: "POST",
+            url: "show_circle.php",
+            data: "edit_circle="+$("#edit_circle").val(),
+            success: function(html) {
+              $('.circle_info').html(html);
+            }
+          });
+          return false;
+        });
+      });
+    </script>
+
 <script>
         $.mask.definitions['9']='[0-9]';
         $(".telephone").mask("+380(99) 999-99-99");

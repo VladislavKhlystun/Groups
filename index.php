@@ -69,7 +69,7 @@ require 'db.php';
               <ul class="list">
                 <li class="list-item">         
                   <?php 
-                  $pnz = 'Дитячий юнацький центр "Перлинка"';
+                  $pnz = 'Дитячий юнацький центр \'Перлинка\'';
                   $circle = R::getAll('SELECT * FROM circle WHERE pnz = :pnz', [':pnz' => $pnz]);
                   $amountCircles = count($circle);
                   if ($amountCircles == 0 ) {
@@ -92,7 +92,7 @@ require 'db.php';
               <ul class="list">
                 <li class="list-item">         
                   <?php 
-                  $pnz = 'Центр позашкільного виховання "Контакт"';
+                  $pnz = 'Центр позашкільного виховання \'Контакт\'';
                   $circle = R::getAll('SELECT * FROM circle WHERE pnz = :pnz', [':pnz' => $pnz]);
                   $amountCircles = count($circle);
                   if ($amountCircles == 0 ) {
@@ -115,7 +115,7 @@ require 'db.php';
               <ul class="list">
                 <li class="list-item">         
                   <?php 
-                  $pnz = 'Центр естетичного виховання "Натхнення"';
+                  $pnz = 'Центр естетичного виховання \'Натхнення\'';
                   $circle = R::getAll('SELECT * FROM circle WHERE pnz = :pnz', [':pnz' => $pnz]);
                   $amountCircles = count($circle);
                   if ($amountCircles == 0 ) {
@@ -161,7 +161,7 @@ require 'db.php';
               <ul class="list">
                 <li class="list-item">         
                   <?php 
-                  $pnz = 'Центр естетичного виховання НВК "Кіровоградський колегіум"';
+                  $pnz = 'Центр естетичного виховання НВК \'Кіровоградський колегіум\'';
                   $circle = R::getAll('SELECT * FROM circle WHERE pnz = :pnz', [':pnz' => $pnz]);
                   $amountCircles = count($circle);
                   if ($amountCircles == 0 ) {
@@ -184,7 +184,7 @@ require 'db.php';
               <ul class="list">
                 <li class="list-item">         
                   <?php 
-                  $pnz = 'Центр естетичного виховання "Росток"';
+                  $pnz = 'Центр естетичного виховання \'Росток\'';
                   $circle = R::getAll('SELECT * FROM circle WHERE pnz = :pnz', [':pnz' => $pnz]);
                   $amountCircles = count($circle);
                   if ($amountCircles == 0 ) {
@@ -207,7 +207,7 @@ require 'db.php';
               <ul class="list">
                 <li class="list-item">         
                   <?php 
-                  $pnz = 'Дитячий юнацький центр "Явір"';
+                  $pnz = 'Дитячий юнацький центр \'Явір\'';
                   $circle = R::getAll('SELECT * FROM circle WHERE pnz = :pnz', [':pnz' => $pnz]);
                   $amountCircles = count($circle);
                   if ($amountCircles == 0 ) {
@@ -230,7 +230,7 @@ require 'db.php';
               <ul class="list">
                 <li class="list-item">         
                   <?php 
-                  $pnz = 'Дитячий юнацький центр "Лідер"';
+                  $pnz = 'Дитячий юнацький центр \'Лідер\'';
                   $circle = R::getAll('SELECT * FROM circle WHERE pnz = :pnz', [':pnz' => $pnz]);
                   $amountCircles = count($circle);
                   if ($amountCircles == 0 ) {
@@ -253,7 +253,7 @@ require 'db.php';
               <ul class="list">
                 <li class="list-item">         
                   <?php 
-                  $pnz = 'Центр естетичного виховання "Калинка" НВО №17';
+                  $pnz = 'Центр естетичного виховання \'Калинка\' НВО №17';
                   $circle = R::getAll('SELECT * FROM circle WHERE pnz = :pnz', [':pnz' => $pnz]);
                   $amountCircles = count($circle);
                   if ($amountCircles == 0 ) {
@@ -276,7 +276,7 @@ require 'db.php';
               <ul class="list">
                 <li class="list-item">         
                   <?php 
-                  $pnz = 'Центр дитячої та юнацької юнацької творчості "Надія" НВО № 18';
+                  $pnz = 'Центр дитячої та юнацької юнацької творчості \'Надія\' НВО № 18';
                   $circle = R::getAll('SELECT * FROM circle WHERE pnz = :pnz', [':pnz' => $pnz]);
                   $amountCircles = count($circle);
                   if ($amountCircles == 0 ) {
@@ -322,7 +322,7 @@ require 'db.php';
               <ul class="list">
                 <li class="list-item">         
                   <?php 
-                  $pnz = 'ДЮЦ "Сузір\'я"';
+                  $pnz = 'ДЮЦ \'Сузір\'я\'';
                   $circle = R::getAll('SELECT * FROM circle WHERE pnz = :pnz', [':pnz' => $pnz]);
                   $amountCircles = count($circle);
                   if ($amountCircles == 0 ) {
@@ -345,7 +345,7 @@ require 'db.php';
               <ul class="list">
                 <li class="list-item">         
                   <?php 
-                  $pnz = 'Центр дитячої та юнацької творчості "Оберіг"';
+                  $pnz = 'Центр дитячої та юнацької творчості \'Оберіг\'';
                   $circle = R::getAll('SELECT * FROM circle WHERE pnz = :pnz', [':pnz' => $pnz]);
                   $amountCircles = count($circle);
                   if ($amountCircles == 0 ) {
@@ -369,7 +369,7 @@ require 'db.php';
               <ul class="list">
                 <li class="list-item">         
                   <?php 
-                  $pnz = 'Центр позашкільного виховання "Ліра"';
+                  $pnz = 'Центр позашкільного виховання \'Ліра\'';
                   $circle = R::getAll('SELECT * FROM circle WHERE pnz = :pnz', [':pnz' => $pnz]);
                   $amountCircles = count($circle);
                   if ($amountCircles == 0 ) {
@@ -392,7 +392,7 @@ require 'db.php';
               <ul class="list">
                 <li class="list-item">         
                   <?php 
-                  $pnz = 'Дитячий юнацький центр "Зорецвіт"';
+                  $pnz = 'Дитячий юнацький центр \'Зорецвіт\'';
                   $circle = R::getAll('SELECT * FROM circle WHERE pnz = :pnz', [':pnz' => $pnz]);
                   $amountCircles = count($circle);
                   if ($amountCircles == 0 ) {
@@ -415,7 +415,7 @@ require 'db.php';
               <ul class="list">
                 <li class="list-item">         
                   <?php 
-                  $pnz = 'ЦДЮТ "Сузір\'я"';
+                  $pnz = 'ЦДЮТ \'Сузір\'я\'';
                   $circle = R::getAll('SELECT * FROM circle WHERE pnz = :pnz', [':pnz' => $pnz]);
                   $amountCircles = count($circle);
                   if ($amountCircles == 0 ) {
@@ -438,7 +438,7 @@ require 'db.php';
               <ul class="list">
                 <li class="list-item">         
                   <?php 
-                  $pnz = 'Позашкільний центр "Школа мистецтв" НВО №32';
+                  $pnz = 'Позашкільний центр \'Школа мистецтв\' НВО №32';
                   $circle = R::getAll('SELECT * FROM circle WHERE pnz = :pnz', [':pnz' => $pnz]);
                   $amountCircles = count($circle);
                   if ($amountCircles == 0 ) {
@@ -484,7 +484,7 @@ require 'db.php';
               <ul class="list">
                 <li class="list-item">         
                   <?php 
-                  $pnz = 'Позашкільний центр "Дивосвіт" НВО № 35';
+                  $pnz = 'Позашкільний центр \'Дивосвіт\' НВО № 35';
                   $circle = R::getAll('SELECT * FROM circle WHERE pnz = :pnz', [':pnz' => $pnz]);
                   $amountCircles = count($circle);
                   if ($amountCircles == 0 ) {
@@ -553,7 +553,7 @@ require 'db.php';
               <ul class="list">
                 <li class="list-item">         
                   <?php 
-                  $pnz = 'Центр науково-технічної творчості "Каскад"';
+                  $pnz = 'Центр науково-технічної творчості \'Каскад\'';
                   $circle = R::getAll('SELECT * FROM circle WHERE pnz = :pnz', [':pnz' => $pnz]);
                   $amountCircles = count($circle);
                   if ($amountCircles == 0 ) {
@@ -576,7 +576,7 @@ require 'db.php';
               <ul class="list">
                 <li class="list-item">         
                   <?php 
-                  $pnz = 'Школа естетичного виховання "В гостях у казки"';
+                  $pnz = 'Школа естетичного виховання \'В гостях у казки\'';
                   $circle = R::getAll('SELECT * FROM circle WHERE pnz = :pnz', [':pnz' => $pnz]);
                   $amountCircles = count($circle);
                   if ($amountCircles == 0 ) {
@@ -599,7 +599,7 @@ require 'db.php';
               <ul class="list">
                 <li class="list-item">         
                   <?php 
-                  $pnz = 'Центр дитячої та юнацької творчості "Центр-Юність"';
+                  $pnz = 'Центр дитячої та юнацької творчості \'Центр-Юність\'';
                   $circle = R::getAll('SELECT * FROM circle WHERE pnz = :pnz', [':pnz' => $pnz]);
                   $amountCircles = count($circle);
                   if ($amountCircles == 0 ) {
