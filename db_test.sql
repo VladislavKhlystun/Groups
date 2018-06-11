@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:3306
--- Время создания: Июн 08 2018 г., 08:50
+-- Время создания: Июн 11 2018 г., 09:05
 -- Версия сервера: 5.7.19
 -- Версия PHP: 7.1.14
 
@@ -74,12 +74,12 @@ CREATE TABLE `circle` (
 --
 
 INSERT INTO `circle` (`id`, `pnz`, `direction`, `name_circle`, `head_id`, `summary`, `achievement`, `schedule`, `address`, `phone`, `email`, `web_site`) VALUES
-(20, 'ЗОШ 8', 'програмування', 'NewHorizon', 4, '', 'перші місця', 'розклад', 'иваи', '+380(15) 351-51-31', 'zz@zz.zz', 'есть'),
-(23, 'ЗОШ 8', 'вишиванки', 'Пролісок', 4, '', 'другі місця', 'розклад', 'иваи', '+380(66) 154-21-11', 'dgd@df.e', 'fhkfhk'),
-(24, 'ЗОШ 3', 'хореографія', 'Крок', 4, 'Анотація', '', '', 'иваи', '+380(66) 154-21-11', 'q@q.q', 'есть'),
-(25, 'ЗОШ 11', 'оригамі', 'Форс', 4, 'АнотаціяАнотаціяАнотаціяАнотаціяАнотаціяАнотація', 'треті місця', 'розклад', 'fkk', '+380(66) 153-87-70', '2z@zz.zz', 'есть'),
-(27, 'ЗОШ 1', 'макраме', 'Jana', 1, '', '', '', 'иваи', '+380(66) 154-21-11', '2z@zz.zz', ''),
-(28, 'ЗОШ 8', 'народознавство', 'Народні обранці', 4, '', '', 'розклад', 'с. нова прага', '+380(32) 664-63-23', 'zz@zz.zz', '');
+(24, 'Позашкільний центр НВО №8', 'Танці', 'танц', NULL, NULL, NULL, NULL, 'fkk', '+380(35) 325-23-35', 'q@q.q', 'есть'),
+(25, 'ДЮЦ \'Сузір\'я\'', 'Вишивка', 'asf', NULL, NULL, NULL, NULL, 'fkk', '+380(66) 154-21-11', '2z@zz.zz', 'есть'),
+(26, 'Позашкільний центр \'Школа мистецтв\' НВО №32', 'Хор', 'michael jackson', 5, NULL, NULL, NULL, 'иваи', '+380(66) 154-21-11', 'sdgdg@dgds.faa', 'есть'),
+(27, 'Центр естетичного виховання НВК \'Кіровоградський колегіум\'', 'Хор', 'хористы', NULL, NULL, NULL, NULL, 'ыавфпвпв', '+380(46) 246-24-66', '2z@zz.zz', 'есть'),
+(30, 'Дитячий юнацький центр \'Перлинка\'', 'Програмування', 'fhdfhf', NULL, NULL, NULL, NULL, 'fhfdh', '+380(66) 154-21-11', 'sdgdg@dgds.faa', 'есть'),
+(31, 'Дитячий юнацький центр \'Перлинка\'', 'Вишивка', 'sdg', NULL, NULL, NULL, NULL, 'sdgd', '+380(21) 412-42-14', 'sdgdg@dgds.faa', 'есть');
 
 -- --------------------------------------------------------
 
@@ -92,18 +92,6 @@ CREATE TABLE `circlepupils` (
   `circle_id` int(11) NOT NULL,
   `pupils_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `circlepupils`
---
-
-INSERT INTO `circlepupils` (`id`, `circle_id`, `pupils_id`) VALUES
-(16, 23, 8),
-(54, 23, 9),
-(65, 23, 11),
-(78, 20, 8),
-(81, 20, 9),
-(82, 24, 9);
 
 -- --------------------------------------------------------
 
@@ -130,7 +118,7 @@ CREATE TABLE `heads` (
 --
 
 INSERT INTO `heads` (`id`, `first_name`, `second_name`, `last_name`, `email`, `password`, `work_place`, `phone`, `address`, `social`, `role`) VALUES
-(1, 'w', 'w', 'w', 'w@w.w', '$2y$10$IbYDMq4REF4UbTX3uQzwMe.EcqpMSCzB.bAVUOuoMYWk4P/HZFI0C', NULL, NULL, NULL, NULL, 1),
+(1, 'w', 'w', 'w', 'w@w.w', '$2y$10$IbYDMq4REF4UbTX3uQzwMe.EcqpMSCzB.bAVUOuoMYWk4P/HZFI0C', NULL, '362757', NULL, NULL, 1),
 (4, 'Артем', 'Сидоренко', 'Олексійович', 'sdgdg@dgds.faa', '$2y$10$doRnFggyU73i/sclo9bTLek//lIxEzT.DsvdtuxlEF1/tBSsk2jEa', '7 этаж адвалаб', '0661538770', 'масляниковка', NULL, 1),
 (5, 'петя', 'прос', 'БАБУШКА', 'xzXv@fadv', '$2y$10$gDjJX3BrVxE/dvrRsNAGNeMJHPqSEk5rea4ieVfyNfP22sArYHfq.', NULL, NULL, NULL, NULL, 1),
 (6, 'Артем', 'йй', 'викторианская', '2z@zz.zz', '$2y$10$euEmQwNAlxM9vONF8zMW/etDsycFZl0fmor5O9Z.lJ.SDMR8BZzC.', 'к3к', NULL, NULL, NULL, 1),
@@ -138,7 +126,7 @@ INSERT INTO `heads` (`id`, `first_name`, `second_name`, `last_name`, `email`, `p
 (8, 'лев', 'левович', 'ян', 'xzXv@fadv', '$2y$10$9EMD8xeHgifBYNHxjYyR3uGhQ4S/KsNl3v2UUk60ggsSGL5ZQlVSK', NULL, NULL, NULL, NULL, 1),
 (9, 'autolog', 's', 's', 'ss@ss.s', '$2y$10$K8Xy0b6hRfDiywGxNRH7oesIqgIH0HCdeLlkvMGTuMuy26CwjwCqm', NULL, NULL, NULL, NULL, 1),
 (10, 'kerivnuk', 'sfaf', 'фвппыа', 'kerivnuk@n.d', '$2y$10$WdLOBqfRAai3tk/Jm1Jo5eZZTzpKl35VuAhlwUu.u4LxdwuQCAt/S', NULL, NULL, NULL, NULL, 1),
-(11, 'kerivnuk', 'sfaf', 'фвппыа', 'kerivnukA@n.d', '$2y$10$e.rZmD20gjGs4RBLtcT70.47NqCnxB7M/uxBjav/ZUTqfBx3lCOhm', NULL, NULL, NULL, NULL, 1);
+(11, 'коля', 'sfaf', 'фвппыа', 'kerivnukA@n.d', '$2y$10$e.rZmD20gjGs4RBLtcT70.47NqCnxB7M/uxBjav/ZUTqfBx3lCOhm', NULL, NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -228,7 +216,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT для таблицы `circle`
 --
 ALTER TABLE `circle`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT для таблицы `circlepupils`

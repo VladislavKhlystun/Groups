@@ -70,7 +70,7 @@
             $head = R::findAll('heads', 'id = ?', [$id_head]);
             $amountHead = count($head);
             if ($amountHead == 0 ) {
-              echo 'Керівник відсутній...';
+              echo '<div style="width:900px;margin-bottom: 20px;">Керівник відсутній...</div>';
             }
             foreach ($head as $key => $item ) {
               echo '<div style="width:900px;margin-bottom: 20px;">'.$item['second_name'] . ' ' . $item['first_name'] . ' ' . $item['last_name'].'</div>';
@@ -86,7 +86,7 @@
               if ($key->summary != ''){
                 echo '<div style="width:900px;margin-bottom: 20px;">'.$key->summary.'</div>';
               } else {
-                echo 'Анотація відсутня на даний момент...';
+                echo '<div style="width:900px;margin-bottom: 20px;">Анотація відсутня на даний момент...</div>';
               }
             }
           ?>
@@ -100,7 +100,7 @@
                 echo '<div style="width:900px;margin-bottom: 20px;">'.$key->achievement.'</div>';
               }
               else {
-                echo 'Досягнень поки немає...';
+                echo '<div style="width:900px;margin-bottom: 20px;">Досягнень поки немає...</div>';
               }
             }
           ?>
@@ -113,7 +113,7 @@
               if($key->schedule != '') {
               echo '<div style="width:900px;margin-bottom: 20px;">'.$key->schedule.'</div>';
             } else {
-              echo 'Розклад недоступниий на даний момент...';
+              echo '<div style="width:900px;margin-bottom: 20px;">Розклад недоступниий на даний момент...</div>';
             }
             }
           ?>
@@ -126,7 +126,7 @@
           $pupils = R::findAll('circlepupils', 'circle_id = ?', [$text]);
           $amountPupils = count($pupils);
           if ($amountPupils == 0) {
-            echo 'Немає учнів в гуртку...';
+            echo '<div style="width:900px;margin-bottom: 20px;">Немає учнів в гуртку...</div>';
           }
           $id_pupils = [];
           $k = 0;
@@ -179,7 +179,7 @@
               if ($key->web_site != '') {
                 echo '<div style="width:900px;margin-bottom: 20px;">' . $key->web_site . '</div>';
               } else {
-                echo 'Сайт відсутній';
+                echo '<div style="width:900px;margin-bottom: 20px;">Сайт відсутній</div>';
               }
             }
           ?>

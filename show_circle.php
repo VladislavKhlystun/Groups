@@ -8,16 +8,17 @@ foreach ($circle as $key => $value) {
 $item_circle = R::load('circle', $id);
 $id_head = $item_circle->head_id;
 $head = R::load('heads', $id_head);
-echo '<div>'. '<div>' . 'Позашкільний навчальний заклад: ' . $item_circle->pnz. '</div>' . 
-			'<div>' . 'Напрям: ' . $item_circle->direction. '</div>' .
-			'<div>' . 'Назва: ' . $item_circle->name_circle. '</div>' .
-			'<div>' . 'Керівник: ' . $head->second_name .' ' . $head->first_name . ' ' . $head->last_name . '</div>' .
-			'<div>' . 'Анотація: ' . $item_circle->summary. '</div>' .
-			'<div>' . 'Досягнення: ' . $item_circle->achievement. '</div>' .
-			'<div>' . 'Розклад: ' . $item_circle->schedule. '</div>' .	
-			'<div>' . 'Адреса: ' . $item_circle->address. '</div>' .
-			'<div>' . 'Телефон: ' . $item_circle->phone. '</div>' .	
-			'<div>' . 'E-mail: ' . $item_circle->email. '</div>' .
-			'<div>' . 'Веб-сайт: ' . $item_circle->web_site. '</div>' .
+echo '<div style="display: flex;flex-direction: column;justify-content: space-between;height: 80%;width: 530px;">'. 
+			'<div style="font-weight: 600;line-height: 24px;">Позашкільний навчальний заклад: </div>' 	. '<div style="font-weight: 300;">' . $item_circle->pnz . '</div>' . 
+			'<div style="font-weight: 600;line-height: 24px;">Напрям: </div>' 												 	. '<div style="font-weight: 300;">' . $item_circle->direction . '</div>' .
+			'<div style="font-weight: 600;line-height: 24px;">Назва: </div>' 												 		. '<div style="font-weight: 300;">' . $item_circle->name_circle . '</div>' .
+			'<div style="font-weight: 600;line-height: 24px;">Керівник: </div>' 											 	. '<div style="font-weight: 300;">' . $head->second_name .' ' . $head->first_name . ' ' . $head->last_name . '</div>' .
+			'<div style="font-weight: 600;line-height: 24px;">Анотація: </div>' 												. '<div style="font-weight: 300;">' . $item_circle->summary . '</div>' .
+			'<div style="font-weight: 600;line-height: 24px;">Досягнення: </div>' 										 	. '<div style="font-weight: 300;">' . $item_circle->achievement . '</div>' .
+			'<div style="font-weight: 600;line-height: 24px;">Розклад: </div>' 											 		. '<div style="font-weight: 300;">' . $item_circle->schedule . '</div>' .	
+			'<div style="font-weight: 600;line-height: 24px;">Адреса: </div>' 												 	. '<div style="font-weight: 300;">' . $item_circle->address . '</div>' .
+			'<div style="font-weight: 600;line-height: 24px;">Телефон: </div>'		 										 	. '<div style="font-weight: 300;">' . $item_circle->phone . '</div>' .	
+			'<div style="font-weight: 600;line-height: 24px;">E-mail: </div>' 												 	. '<div style="font-weight: 300;">' . $item_circle->email . '</div>' .
+			'<div style="font-weight: 600;line-height: 24px;">Веб-сайт: </div>' 											 	. '<div style="font-weight: 300;">' . $item_circle->web_site . '</div>' .
 '</div>';
 ?>

@@ -18,69 +18,69 @@ if ($role != 2) {
  <link rel="stylesheet" href="css/reset.css">
  <link rel="stylesheet" href="css/style.css">
  <style>
- .new_h3 {text-align: center;margin-bottom: 30px;} 
- .new_form {padding: 0 30px;}
- .new_form2 {padding: 0 30px;}
- .new_select {width: 100px;}
- .new_btn {margin-top: 50px;}
- .circle__title {font-weight: 600;line-height: 25px;}
- .circle-list {font-weight: 300;}
- 
- .boss-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 2px solid;
-  margin: 20px auto;
-  padding: 10px;
-  width: 25%;
-}
-.edit_password {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px auto;
-  padding: 5px;
-  border: 2px solid;
-  width: 25%;
-}
-.editpasstitle {
-  font-weight: 600;
-  font-size: 20px;
-}
-.editpasslight {font-weight: 300;}
-.but {
-  cursor: pointer;
-  border: 1px solid #000;
-  background-color: #ccc;
-  border-radius: 3px;
-  padding: 4px 0px;
-  margin-top: 5px;
-  width: max-content;
-}
-/*footer*/
-.footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 158px;
-  border-top: 1px solid #000;
-}
-.footer-block {
-  display: flex;
-  justify-content: center;
-  font-size: 18px;
-}
-.footer__span {margin-right: 3px;}
-.footer__link {
-  color:#000;
-  text-decoration: none;
-  font-weight: 600;
-}
-.footer__link:hover {
-  color:#445454;
-  text-decoration: underline;
-}
+   .new_h3 {text-align: center;margin-bottom: 30px;} 
+   .new_form {padding: 0 30px;}
+   .new_form2 {padding: 0 30px;}
+   .new_select {width: 100px;}
+   .new_btn {margin-top: 50px;}
+   .circle__title {font-weight: 600;line-height: 25px;}
+   .circle-list {font-weight: 300;}
+   
+   .boss-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid;
+    margin: 20px auto;
+    padding: 10px;
+    width: 25%;
+  }
+  .edit_password {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    padding: 5px;
+    border: 2px solid;
+    width: 25%;
+  }
+  .editpasstitle {
+    font-weight: 600;
+    font-size: 20px;
+  }
+  .editpasslight {font-weight: 300;}
+  .but {
+    cursor: pointer;
+    border: 1px solid #000;
+    background-color: #ccc;
+    border-radius: 3px;
+    padding: 4px 0px;
+    margin-top: 5px;
+    width: max-content;
+  }
+  /*footer*/
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 158px;
+    border-top: 1px solid #000;
+  }
+  .footer-block {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+  }
+  .footer__span {margin-right: 3px;}
+  .footer__link {
+    color:#000;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .footer__link:hover {
+    color:#445454;
+    text-decoration: underline;
+  }
 </style>
 </head>
 <body>

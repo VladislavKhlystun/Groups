@@ -350,59 +350,56 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
     </section>
 
     <section class="content-hide" id="content3">
-      <div class="circle_info">
-        
-      </div>
-      <form class="form" action="admin.php" method="post">
-       
+      <div style="display: flex;flex-direction: row-reverse;justify-content: space-between;">
+        <div class="circle_info" style="display: flex;justify-content: center;"></div>
 
-         <select name="select_circle" id="edit_circle" class="del-circle__select" style="width: 50%;">
-          <option value="0">Вибрати гурток...</option>
-          <?php 
-          $id = 0;
-          foreach ($circle as $key => $item) {
-            echo '<option value="'. $key.'">'. $item->name_circle .'</option>';
-          }  
-          ?>
-        </select>
-        
+        <form class="form" action="admin.php" method="post">
+         
 
-        <!-- <label for="1" class="form__label">Позашкільний НЗ</label>
-        <input type="text" class="form__input" id="1" name="pnz">
-        
-        <label for="2" class="form__label">Напрям</label>
-        <input type="text" class="form__input" id="2" name="direction"> -->
+           <select name="select_circle" id="edit_circle" class="del-circle__select" style="width: 50%;">
+            <option value="0">Вибрати гурток...</option>
+            <?php 
+            $id = 0;
+            foreach ($circle as $key => $item) {
+              echo '<option value="'. $key.'">'. $item->name_circle .'</option>';
+            }  
+            ?>
+          </select>
+          
 
-   <!--      <label for="2" class="form__label">Напрям</label>
-   <input type="text" class="form__input" id="2" name="direction">
-   <select name="direction" class="form__input" id="2">
-     <option value="0">Вибрати напрям...</option>
-     <option value="Програмування">Програмування</option>
-     <option value="Вишивка">Вишивка</option>
-     <option value="Танці">Танці</option>
-     <option value="Художнє мистецтво">Художнє мистецтво</option>
-     <option value="Хор">Хор</option>
-   </select> -->
+          <!-- <label for="1" class="form__label">Позашкільний НЗ</label>
+          <input type="text" class="form__input" id="1" name="pnz">          
+          <label for="2" class="form__label">Напрям</label>
+          <input type="text" class="form__input" id="2" name="direction"> -->
+         <!--      <label for="2" class="form__label">Напрям</label>
+         <input type="text" class="form__input" id="2" name="direction">
+         <select name="direction" class="form__input" id="2">
+           <option value="0">Вибрати напрям...</option>
+           <option value="Програмування">Програмування</option>
+           <option value="Вишивка">Вишивка</option>
+           <option value="Танці">Танці</option>
+           <option value="Художнє мистецтво">Художнє мистецтво</option>
+           <option value="Хор">Хор</option>
+         </select> -->
 
-        <label for="3" class="form__label">Назва гуртка</label>
-        <input type="text" class="form__input" id="3" name="name_circle">
+          <label for="3" class="form__label">Назва гуртка</label>
+          <input type="text" class="form__input" id="3" name="name_circle">
 
-        <label for="9" class="form__label">Адреса</label>
-        <input type="text" class="form__input" id="9" name="address">
+          <label for="9" class="form__label">Адреса</label>
+          <input type="text" class="form__input" id="9" name="address">
 
-        <label for="10" class="form__label ">Телефон</label>
-        <input type="text" class="form__input telephone" id="10" name="phone">
+          <label for="10" class="form__label ">Телефон</label>
+          <input type="text" class="form__input telephone" id="10" name="phone">
 
-        <label for="11" class="form__label">Е-пошта</label>
-        <input type="text" class="form__input" id="11" name="email">
+          <label for="11" class="form__label">Е-пошта</label>
+          <input type="text" class="form__input" id="11" name="email">
 
-        <label for="12" class="form__label">Веб-сайт</label>
-        <input type="text" class="form__input" id="12" name="web_site">
+          <label for="12" class="form__label">Веб-сайт</label>
+          <input type="text" class="form__input" id="12" name="web_site">
 
-        <button class="form__btn" name="submit_edit">Редагувати гурток</button>
-      </form>
-
-      
+          <button class="form__btn" name="submit_edit">Редагувати гурток</button>
+        </form>
+      </div>      
     </section>
 
     <section class="content-hide" id="content4">
