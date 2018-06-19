@@ -10,9 +10,9 @@ $id_head = $item_circle->head_id;
 $head = R::load('heads', $id_head);
 echo '<div style="display: flex;flex-direction: column;justify-content: space-between;height: 80%;width: 530px;">'. 
 			'<div style="font-weight: 600;line-height: 24px;">Позашкільний навчальний заклад: </div>' 	. '<div style="font-weight: 300;">' . $item_circle->pnz . '</div>' . 
-			'<div style="font-weight: 600;line-height: 24px;">Напрям: </div>' 												 	. '<div style="font-weight: 300;">' . $item_circle->direction . '</div>' .
+			'<div style="font-weight: 600;line-height: 24px;">Напрям діяльності: </div>' 												 	. '<div style="font-weight: 300;">' . $item_circle->direction . '</div>' .
 			'<div style="font-weight: 600;line-height: 24px;">Назва: </div>' 												 		. '<div style="font-weight: 300;">' . $item_circle->name_circle . '</div>' .
-			'<div style="font-weight: 600;line-height: 24px;">Керівник: </div>' 											 	. '<div style="font-weight: 300;">' . $head->second_name .' ' . $head->first_name . ' ' . $head->last_name . '</div>' .
+			'<div style="font-weight: 600;line-height: 24px;">Керівник гуртка: </div>' 											 	. '<div style="font-weight: 300;">' . $head->second_name .' ' . $head->first_name . ' ' . $head->last_name . '</div>' .
 			'<div style="font-weight: 600;line-height: 24px;">Анотація: </div>' 												. '<div style="font-weight: 300;">' . $item_circle->summary . '</div>' .
 			'<div style="font-weight: 600;line-height: 24px;">Досягнення: </div>' 										 	. '<div style="font-weight: 300;">' . $item_circle->achievement . '</div>' .
 			'<div style="font-weight: 600;line-height: 24px;">Розклад: </div>' 											 		. '<div style="font-weight: 300;">' . $item_circle->schedule . '</div>' .	

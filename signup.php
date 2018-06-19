@@ -9,8 +9,8 @@
 		$errors = array();
 		if ( trim($data['first_name']) == '' ) 					{$errors[] = 'Введіть ім\'я';}
 		if ( trim($data['second_name']) == '' )					{$errors[] = 'Введіть прізвище';}
-		if ( trim($data['last_name']) == '' ) 					{$errors[] = 'Введіть по-батькові';}
-		if ( trim($data['certificate']) == '' )					{$errors[] = 'Введіть свідоцтво';}
+		if ( trim($data['last_name']) == '' ) 					{$errors[] = 'Введіть по батькові';}
+		if ( trim($data['certificate']) == '' )					{$errors[] = 'Введіть свідоцтво про народження';}
 		if ( trim($data['email']) == '' )								{$errors[] = 'Введіть Email';}
 		if ( $data['password'] == '' ) 									{$errors[] = 'Введіть пароль';}
 		if ( $data['password_2'] != $data['password'] )	{$errors[] = 'Повторний пароль введений невірно!';}
@@ -33,8 +33,8 @@
 			$user->certificate = $data['certificate'];
 			$user->email = $data['email'];
 			$user->password = password_hash($data['password'], PASSWORD_DEFAULT);
-			/*$user->school = $data['school'];*/
-			$user->phone = $data['phone'];
+			$user->school = $data['school'];
+			// $user->phone = $data['phone'];
 			/*$user->address = $data['address'];
 			$user->social = $data['social'];*/
 			$name = $data['first_name']; $name = htmlspecialchars($name); $name = urldecode($name);
@@ -66,7 +66,7 @@
 		$errors = array();
 		if ( trim($data['first_name']) == '' ) 					{$errors[] = 'Введіть ім\'я';}
 		if ( trim($data['second_name']) == '' )					{$errors[] = 'Введіть прізвище';}
-		if ( trim($data['last_name']) == '' ) 					{$errors[] = 'Введіть по-батькові';}
+		if ( trim($data['last_name']) == '' ) 					{$errors[] = 'Введіть по батькові';}
 		if ( trim($data['email']) == '' )								{$errors[] = 'Введіть Email';}
 		if ( $data['password'] == '' ) 									{$errors[] = 'Введіть пароль';}
 		if ( $data['password_2'] != $data['password'] )	{$errors[] = 'Повторний пароль введений невірно!';}
@@ -115,7 +115,7 @@
 </head>
 <body>
 	<div style="width: 50%; margin: 0 auto; text-align: center;">	
-		<button type="submit" id="toggle" class="tog-btn">Реєстрація Керівника</button>
+		<button type="submit" id="toggle" class="tog-btn">Реєстрація Керівника гуртка</button>
 		<button type="submit" id="toggle2" class="tog-btn">Реєстрація Учня</button>
 	</div>
 
@@ -123,17 +123,67 @@
 		<h2>Реєстрація на сайті</h2>
 		<p><span>* </span>- поле обов'язкове для заповнення</p>
 		
-		<h5><strong>Ваше імя </strong><span>*</span></h5>
-		<input type="text" name="first_name" value="<?php echo @$data['first_name']; ?>"><br/>
-
 		<h5><strong>Ваше прізвище </strong><span>*</span></h5>
 		<input type="text" name="second_name" value="<?php echo @$data['second_name']; ?>"><br/>
 
-		<h5><strong>Ваше по-батькові</strong><span>*</span></h5>
+		<h5><strong>Ваше імя </strong><span>*</span></h5>
+		<input type="text" name="first_name" value="<?php echo @$data['first_name']; ?>"><br/>
+
+		<h5><strong>Ваше по батькові</strong><span>*</span></h5>
 		<input type="text" name="last_name" value="<?php echo @$data['last_name']; ?>"><br/>
 
-		<h5><strong>Ваше свідоцтво</strong><span>*</span></h5>
+		<h5><strong>Ваше свідоцтво про народження</strong><span>*</span></h5>
 		<input type="text" name="certificate" class="certificate" <?php echo @$data['certificate']; ?>><br/>
+
+		<h5><strong>Ваша школа</strong><span>*</span></h5>
+		<select name="school" id="" class="school-select">
+			<option value="НВО № 1">НВО № 1</option>
+			<option value="НВО № 2">НВО № 2</option>
+			<option value="НВО № 3">НВО № 3</option>
+			<option value="НВО № 4">НВО № 4</option>
+			<option value="НВО ім. Т. Шевченка">НВО ім. Т. Шевченка</option>
+			<option value="НВО № 6">НВО № 6</option>
+			<option value="НВО № 7">НВО № 7</option>
+			<option value="НВО № 8">НВО № 8</option>
+			<option value="Гімназія № 9">Гімназія № 9</option>
+			<option value="НВО № 10">НВО № 10</option>
+			<option value="НВК „Кір. колегіум”">НВК „Кір. колегіум”</option>
+			<option value="ЗОШ № 12">ЗОШ № 12</option>
+			<option value="СЗОШ № 14">СЗОШ № 14</option>
+			<option value="НВО № 15">НВО № 15</option>
+			<option value="НВО № 16">НВО № 16</option>
+			<option value="НВО № 17">НВО № 17</option>
+			<option value="НВО № 18">НВО № 18</option>
+			<option value="НВО № 19">НВО № 19</option>
+			<option value="НВО № 20">НВО № 20</option>
+			<option value="НВО № 21">НВО № 21</option>
+			<option value="НВО № 22">НВО № 22</option>
+			<option value="НВО № 23">НВО № 23</option>
+			<option value="НВО № 24">НВО № 24</option>
+			<option value="НВО № 25">НВО № 25</option>
+			<option value="НВО № 26">НВО № 26</option>
+			<option value="НВО № 29">НВО № 29</option>
+			<option value="НВО № 30">НВО № 30</option>
+			<option value="НВО № 31">НВО № 31</option>
+			<option value="НВО № 32">НВО № 32</option>
+			<option value="НВО № 33">НВО № 33</option>
+			<option value="НВО № 34">НВО № 34</option>
+			<option value="НВО № 35">НВО № 35</option>
+			<option value="НВО № 36">НВО № 36</option>
+			<option value="НВО № 37">НВО № 37</option>
+			<option value="НВО “ЗОШ-інтернат”">НВО “ЗОШ-інтернат”</option>
+			<option value="СпецЗОШ № 1">СпецЗОШ № 1</option>
+			<option value="СпецЗОШ № 3">СпецЗОШ № 3</option>
+			<option value="НВО “Вікторія-П”">НВО “Вікторія-П”</option>
+			<option value="НВО “Мрія”">НВО “Мрія”</option>
+			<option value="Гімназія НТН">Гімназія НТН</option>
+			<option value="Педагогічний ліцей">Педагогічний ліцей</option>
+			<option value="БДЮТ">БДЮТ</option>
+			<option value="„Каскад”">„Каскад”</option>
+			<option value="СЮТ">СЮТ</option>
+			<option value="Школа естетич. вихов. „В гостях у казки”">Школа естетич. вихов. „В гостях у казки”</option>
+			<option value="Центр „Юність”">Центр „Юність”</option>
+		</select>
 
 		<h5><strong>Ваш Email</strong><span>*</span></h5>
 		<input type="email" name="email" value="<?php echo @$data['email']; ?>"><br/>
@@ -149,7 +199,7 @@
 
 		<div class="group-btn">
 			<button type="submit" name="do_signup" class="button">Реєстрація</button>
-			<a href="index.php" class="link">Назад</a>
+			<a href="index.php" class="link">На головну</a>
 		</div>
 	</form>
 	
@@ -158,13 +208,13 @@
 		<h2 class="title">Реєстрація для керівника гуртка</h2>
 		<p><span>* </span>- поле обов'язкове для заповнення</p>
 
+		<strong>Ваше прізвище <span>*</span></strong>
+		<input type="text" name="second_name" value="<?php echo @$data['second_name']; ?>"><br/>
+		
 		<strong>Ваше імя <span>*</span></strong>
 		<input type="text" name="first_name" value="<?php echo @$data['first_name']; ?>"><br/>
 
-		<strong>Ваше прізвище <span>*</span></strong>
-		<input type="text" name="second_name" value="<?php echo @$data['second_name']; ?>"><br/>
-
-		<strong>Ваше по-батькові <span>*</span></strong>
+		<strong>Ваше по батькові <span>*</span></strong>
 		<input type="text" name="last_name" value="<?php echo @$data['last_name']; ?>"><br/>
 
 		<strong>Ваш Email <span>*</span></strong>
@@ -178,7 +228,7 @@
 		
 		<div class="group-btn">
 			<button type="submit" name="do_signup_2" class="button">Реєстрація</button>
-			<a href="index.php" class="link">Назад</a>
+			<a href="index.php" class="link">На головну</a>
 		</div>
 	</form>
 
@@ -196,7 +246,7 @@
 	<script src="js/jquery.maskedinput.min.js"></script>
 	<script>
 		$.mask.definitions['a']='[А-ЯІЇ]';
-		$(".certificate").mask("9-aa 999999");
+		$(".certificate").mask("I-aa 999999");
 		$('.telephone').mask("+380(99) 999-99-99");
 	</script>
 </body>

@@ -65,7 +65,7 @@
 		
 		<div class="group-btn">
 			<button type="submit" name="do_login" class="button">Вхід</button>
-			<a href="index.php" class="link">Назад</a>
+			<a href="index.php" class="link">На головну</a>
 		</div>
 	</form>
 
@@ -79,7 +79,7 @@
 
 		<div class="group-btn">
 			<button type="submit" name="do_login_head" class="button">Вхід</button>
-			<a href="index.php" class="link">Назад</a>
+			<a href="index.php" class="link">На головну</a>
 		</div>
 	</form>
 

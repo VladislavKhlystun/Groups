@@ -8,7 +8,7 @@ require 'db.php';
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Index</title>
+	<title>Позашкільна освіта міста Кропивницького</title>
 	<link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
   <style>
@@ -58,7 +58,7 @@ require 'db.php';
   <!-- content -->
   <div class="wrap">
     <section class="content">
-      <h3 class="content__title">Гуртки Кропивницького</h3>
+      <h3 class="content__title">Електронна реєстрація в гуртки</h3>
       
       <!-- Выезжающие списки кружков, школ, ПНЗ -->
       <div>
@@ -621,7 +621,7 @@ require 'db.php';
 <hr> 
 
 <div>
-  <button class="accordion">Керівники</button>
+  <button class="accordion">Керівники гуртків</button>
   <div class="panel">
     <?php 
     $allHeads = R::findAll('heads');
@@ -709,7 +709,7 @@ require 'db.php';
       echo '<a style="margin: 40px auto;" href="admin.php"> Панель адміністратора </a>';
     }
     if ($_SESSION['logged_user']->role == 1) {
-      echo '<a style="margin: 40px auto;" href="head_circle.php"> Кабінет керівника </a>';
+      echo '<a style="margin: 40px auto;" href="head_circle.php"> Кабінет керівника гуртка</a>';
     }
     if ($_SESSION['logged_user']->role == 2) {
       echo '<a style="margin: 40px auto;" href="user.php"> Кабінет учня </a>';

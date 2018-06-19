@@ -15,7 +15,7 @@ if ( isset($data['submit_create']) ) {
   // проверка формы на пустоту полей
   $errors = array();
   if ($data['pnz'] == '0') {$errors[] = 'Позашкільний навчальний заклад не вибрано!';}
-  if ($data['direction'] == '0') {$errors[] = 'Напрям не вибрано!';}
+  if ($data['direction'] == '0') {$errors[] = 'Напрям діяльності не вибрано!';}
   /*if ( trim($data['pnz']) == '' )         {$errors[] = 'Введіть позашкільний навчальний заклад';}*/
 /*  if ( trim($data['direction']) == '' )   {$errors[] = 'Введіть напрям';}*/
   if ( trim($data['name_circle']) == '' ) {$errors[] = 'Введіть назву гуртка';}
@@ -146,12 +146,12 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
                     $head_id = $_POST['head'];
                     $circle_id = $_POST['circle'];
                     if ($head_id == 0 || $circle_id == 0) {
-                      echo '<div style="position: absolute;top:50%;left:45%;color:red;font-size:18px;z-index:9999;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);"> Гурток або керівник не вибраний! </div>';
+                      echo '<div style="position: absolute;top:50%;left:45%;color:red;font-size:18px;z-index:9999;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);"> Гурток або керівник гуртка не вибраний! </div>';
                     } else {
                     $item = R::load('circle', $circle_id);
                     $item->head_id = $head_id;
                     R::store($item);
-                    echo '<div id="a" style="position: absolute;top:50%;left:45%;color:green;font-size:18px;z-index:9999;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);"> Керівника призначено!</div>';
+                    echo '<div id="a" style="position: absolute;top:50%;left:45%;color:green;font-size:18px;z-index:9999;border:1px solid #000;border-radius:5px;padding:40px 50px;background-color:rgba(39,38,34,0.5);"> Керівника гуртка призначено!</div>';
                   }
                     ?> 
                      <script> 
@@ -251,7 +251,7 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
     <label class="content__label" for="tab3"> <i class="fas fa-edit"></i> Редагувати гурток</label>
 
     <input class="content__input" id="tab4" type="radio" name="tabs">
-    <label class="content__label" for="tab4"><i class="fas fa-user-shield"></i> Призначити керівника</label>
+    <label class="content__label" for="tab4"><i class="fas fa-user-shield"></i> Призначити керівника гуртка</label>
 
     <section class="content-hide" id="content1">
       <form class="form" action="admin.php" method="post">
@@ -285,15 +285,22 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
           <option value="Центр дитячої та юнацької творчості 'Центр-Юність'">Центр дитячої та юнацької творчості "Центр-Юність"</option>
         </select>
 
-        <label for="2" class="form__label">Напрям</label>
+        <label for="2" class="form__label">Напрям діяльності</label>
         <!-- <input type="text" class="form__input" id="2" name="direction"> -->
         <select name="direction" class="form__input" id="2">
-          <option value="0">Вибрати напрям...</option>
-          <option value="Програмування">Програмування</option>
-          <option value="Вишивка">Вишивка</option>
-          <option value="Танці">Танці</option>
-          <option value="Художнє мистецтво">Художнє мистецтво</option>
-          <option value="Хор">Хор</option>
+          <option value="0">Вибрати напрям діяльності...</option>
+          <option value="науково-технічний">науково-технічний</option>
+          <option value="еколого-натуралістичний">еколого-натуралістичний</option>
+          <option value="туристсько-краєзнавчий">туристсько-краєзнавчий</option>
+          <option value="фізкультурно-спортивний / спортивний">фізкультурно-спортивний / спортивний</option>
+          <option value="художньо-естетичний">художньо-естетичний</option>
+          <option value="дослідницько-експериментальний">дослідницько-експериментальний</option>
+          <option value="військово-патріотичний">військово-патріотичний</option>
+          <option value="соціально-реабілітаційний">соціально-реабілітаційний</option>
+          <option value="гуманітарний">гуманітарний</option>
+          <option value="бібліотечно-бібліографічний">бібліотечно-бібліографічний</option>
+          <option value="оздоровчий">оздоровчий</option>
+          <option value="інше">інше</option>
         </select>
 
         <label for="3" class="form__label">Назва гуртка</label>
@@ -419,7 +426,7 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
         </select>
 
         <select name="head" id="" class="del-circle__select">
-          <option value="0">Вибрати керівника...</option>
+          <option value="0">Вибрати керівника гуртка...</option>
           <?php 
           $head = R::findAll('heads');
           $id = 0;

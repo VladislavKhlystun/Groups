@@ -44,7 +44,7 @@
         </li>
 
         <li class="circle-list">
-          <span class="circle__title">Напрям</span>
+          <span class="circle__title">Напрям діяльності</span>
           <?php
           foreach ($NAMA as $key) {
             echo '<div style="width:900px;margin-bottom: 20px;">'.$key->direction.'</div>';
@@ -70,7 +70,7 @@
             $head = R::findAll('heads', 'id = ?', [$id_head]);
             $amountHead = count($head);
             if ($amountHead == 0 ) {
-              echo '<div style="width:900px;margin-bottom: 20px;">Керівник відсутній...</div>';
+              echo '<div style="width:900px;margin-bottom: 20px;">Керівник гуртка відсутній...</div>';
             }
             foreach ($head as $key => $item ) {
               echo '<div style="width:900px;margin-bottom: 20px;">'.$item['second_name'] . ' ' . $item['first_name'] . ' ' . $item['last_name'].'</div>';
@@ -187,7 +187,7 @@
                
       </ul>
 
-      <a href="index.php" class="get-back btm">Назад</a>
+      <a href="index.php" class="get-back btm">На головну</a>
     </section>
     
     <!-- .content Контент сайта -->

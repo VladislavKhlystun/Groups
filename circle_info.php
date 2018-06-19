@@ -52,7 +52,7 @@
           ?>
         </li>
 
-        <span class="circle__title">Напрям</span>
+        <span class="circle__title">Напрям діяльності</span>
         <li class="circle-list"> 
           <?php
             foreach ($NAMA as $key) {
@@ -175,7 +175,7 @@
      
           
   </div>
-      <a href="head_circle.php" class="get-back btm">Назад</a>
+      <a href="head_circle.php" class="get-back btm">На головну</a>
     </section>
     
   </div>

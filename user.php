@@ -234,7 +234,54 @@ if ($role != 2) {
 
       <div class="items">
         <strong>Ваша школа</strong><br>
-        <input type="text" name="school" value="<?php echo @$data['school']; ?>"><br/>
+        <select name="school" id="" style="width: 160.8px;">
+          <option value="НВО № 1">НВО № 1</option>
+          <option value="НВО № 2">НВО № 2</option>
+          <option value="НВО № 3">НВО № 3</option>
+          <option value="НВО № 4">НВО № 4</option>
+          <option value="НВО ім. Т. Шевченка">НВО ім. Т. Шевченка</option>
+          <option value="НВО № 6">НВО № 6</option>
+          <option value="НВО № 7">НВО № 7</option>
+          <option value="НВО № 8">НВО № 8</option>
+          <option value="Гімназія № 9">Гімназія № 9</option>
+          <option value="НВО № 10">НВО № 10</option>
+          <option value="НВК „Кір. колегіум”">НВК „Кір. колегіум”</option>
+          <option value="ЗОШ № 12">ЗОШ № 12</option>
+          <option value="СЗОШ № 14">СЗОШ № 14</option>
+          <option value="НВО № 15">НВО № 15</option>
+          <option value="НВО № 16">НВО № 16</option>
+          <option value="НВО № 17">НВО № 17</option>
+          <option value="НВО № 18">НВО № 18</option>
+          <option value="НВО № 19">НВО № 19</option>
+          <option value="НВО № 20">НВО № 20</option>
+          <option value="НВО № 21">НВО № 21</option>
+          <option value="НВО № 22">НВО № 22</option>
+          <option value="НВО № 23">НВО № 23</option>
+          <option value="НВО № 24">НВО № 24</option>
+          <option value="НВО № 25">НВО № 25</option>
+          <option value="НВО № 26">НВО № 26</option>
+          <option value="НВО № 29">НВО № 29</option>
+          <option value="НВО № 30">НВО № 30</option>
+          <option value="НВО № 31">НВО № 31</option>
+          <option value="НВО № 32">НВО № 32</option>
+          <option value="НВО № 33">НВО № 33</option>
+          <option value="НВО № 34">НВО № 34</option>
+          <option value="НВО № 35">НВО № 35</option>
+          <option value="НВО № 36">НВО № 36</option>
+          <option value="НВО № 37">НВО № 37</option>
+          <option value="НВО “ЗОШ-інтернат”">НВО “ЗОШ-інтернат”</option>
+          <option value="СпецЗОШ № 1">СпецЗОШ № 1</option>
+          <option value="СпецЗОШ № 3">СпецЗОШ № 3</option>
+          <option value="НВО “Вікторія-П”">НВО “Вікторія-П”</option>
+          <option value="НВО “Мрія”">НВО “Мрія”</option>
+          <option value="Гімназія НТН">Гімназія НТН</option>
+          <option value="Педагогічний ліцей">Педагогічний ліцей</option>
+          <option value="БДЮТ">БДЮТ</option>
+          <option value="„Каскад”">„Каскад”</option>
+          <option value="СЮТ">СЮТ</option>
+          <option value="Школа естетич. вихов. „В гостях у казки”">Школа естетич. вихов. „В гостях у казки”</option>
+          <option value="Центр „Юність”">Центр „Юність”</option>
+        </select>
       </div>
 
       <div class="items">
