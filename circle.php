@@ -177,7 +177,7 @@
           <?php
             foreach ($NAMA as $key) {
               if ($key->web_site != '') {
-                echo '<div style="width:900px;margin-bottom: 20px;">' . $key->web_site . '</div>';
+                echo '<a href='. $key->web_site .' style="width:900px;margin-bottom: 20px;">' . $key->web_site . '</a>';
               } else {
                 echo '<div style="width:900px;margin-bottom: 20px;">Сайт відсутній</div>';
               }

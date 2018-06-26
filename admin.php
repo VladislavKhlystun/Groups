@@ -431,7 +431,7 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
           $head = R::findAll('heads');
           $id = 0;
           foreach ($head as $key => $item) {
-            echo '<option value="'. $key.'">'. $item->first_name . ' '. $item->second_name . ' ' .$item->last_name .'</option>';
+            echo '<option value="'. $key.'">'. $item->second_name . ' '. $item->first_name . ' ' .$item->last_name .'</option>';
           }  
           ?>
         </select>
@@ -457,7 +457,7 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
           ?>
         </li>
 
-        <span class="circle__title">По-батькові</span>
+        <span class="circle__title">По батькові</span>
         <li class="circle-list">
           <?php
             echo $_SESSION['logged_user']->last_name;
@@ -505,7 +505,7 @@ mail('vladislav.khlystun@gmail.com', 'My Subject', $message);*/
           <strong >Ваше прізвище</strong><br>
           <input type="text" style="margin-bottom: 5px;" name="second_name" value="<?php echo @$data['second_name']; ?>"><br/>          
 
-          <strong >Ваше по-батькові</strong><br>
+          <strong >Ваше по батькові</strong><br>
           <input type="text" style="margin-bottom: 5px;" name="last_name" value="<?php echo @$data['last_name']; ?>"><br/>         
 
           <strong >Ваша адреса</strong><br>

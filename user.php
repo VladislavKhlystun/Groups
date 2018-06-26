@@ -112,7 +112,7 @@ if ($role != 2) {
             ?>
           </li>
 
-          <span class="circle__title">По-батькові</span>
+          <span class="circle__title">По батькові</span>
           <li class="circle-list">
             <?php
             echo $_SESSION['logged_user']->last_name;
@@ -197,7 +197,7 @@ if ($role != 2) {
         <li class="circle-list">
           <?php
           if ($_SESSION['logged_user']->social != '') {
-            echo $_SESSION['logged_user']->social;
+            echo '<a href="' . $_SESSION['logged_user']->social . '">' . $_SESSION['logged_user']->social . '</a>';
           } else {
             echo 'Додайте спільноти...';
           }
@@ -218,7 +218,7 @@ if ($role != 2) {
        </div>
 
        <div class="items">
-         <strong>Ваше по-батькові</strong><br>
+         <strong>Ваше по батькові</strong><br>
          <input type="text" name="last_name" value="<?php echo @$data['last_name']; ?>"><br/>
        </div>
 
@@ -338,7 +338,7 @@ if (isset($_POST['update'])) {
   if ( trim($_POST['address']) != '' ) {
     $item->address = $_POST['address'];
   }
-  if ( trim($_POST['social']) == '' ) {
+  if ( trim($_POST['social']) !== '' ) {
     $item->social = $_POST['social'];
   }
   if (empty($errors)) {

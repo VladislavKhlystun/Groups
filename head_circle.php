@@ -262,7 +262,7 @@ if ($role != 1) {
           ?>
         </li>
 
-         <span class="circle__title">По-батькові</span>
+         <span class="circle__title">По батькові</span>
         <li class="circle-list">
           <?php
             echo $_SESSION['logged_user']->last_name;
@@ -313,7 +313,7 @@ if ($role != 1) {
         <li class="circle-list">
         	<?php
         	if ($_SESSION['logged_user']->social != '') {
-        		echo $_SESSION['logged_user']->social;
+        		echo '<a href="' . $_SESSION['logged_user']->social . '">' . $_SESSION['logged_user']->social . '</a>';
         	} else {
         		echo 'Додайте спільноти...';
         	}
@@ -334,7 +334,7 @@ if ($role != 1) {
        </div>
 
        <div class="items">
-         <strong>Ваше по-батькові</strong><br>
+         <strong>Ваше по батькові</strong><br>
          <input type="text" class="items__input" name="last_name" value="<?php echo @$data['last_name']; ?>"><br/>
        </div>
 
@@ -423,34 +423,38 @@ if ($role != 1) {
     </section>
   </div>	
 <!-- ================================================         ========================================================= -->
+      
+      <div class="dd" style="display: flex;justify-content: center;">
+        <form action="head_circle.php" class="new_form" method="post">
+          <h2 style="margin: 15px 0; font-size: 18px;">  Редагування інформації про гурток</h2>
+          <select name="selectUpdate_circleInfo" id="edit_head" style="width: 200px;height: 30px;">
+            <option value="0">Вибрати гурток...</option>
+            <?php 
+            $circle = R::findAll('circle', 'head_id = ?', [$_SESSION['logged_user']->id]);
+            foreach ($circle as $key => $item) {
+              echo '<option value="'. $key.'">'. $item->name_circle .'</option>';
+            }  
+            ?>
+          </select>
+          <div class="items"> 
+           <strong >Анотація</strong><br>
+           <textarea type="text" name="summary" style="max-width: 194px;min-width: 194px;max-height: 60px;min-height: 60px;" value="<?php echo @$data['summary']; ?>"> </textarea><br/>
+         </div>
 
-		 <form action="head_circle.php" class="new_form" method="post">
-        <h2 style="margin: 15px 0; font-size: 18px;">  Редагування інформації про гурток</h2>
-        <select name="selectUpdate_circleInfo" id="" style="width: 200px;height: 30px;">
-        <option value="0">Вибрати гурток...</option>
-          <?php 
-          $circle = R::findAll('circle', 'head_id = ?', [$_SESSION['logged_user']->id]);
-          foreach ($circle as $key => $item) {
-            echo '<option value="'. $key.'">'. $item->name_circle .'</option>';
-          }  
-          ?>
-        </select>
-      <div class="items"> 
-       <strong >Анотація</strong><br>
-        <textarea type="text" name="summary" style="max-width: 194px;min-width: 194px;max-height: 60px;min-height: 60px;" value="<?php echo @$data['summary']; ?>"> </textarea><br/>
-        </div>
+         <div class="items"> 
+           <strong >Досягнення</strong><br>
+           <textarea type="text" name="achievement" style="max-width: 194px;min-width: 194px;max-height: 60px;min-height: 60px;" value="<?php echo @$data['achievement']; ?>"> </textarea><br/>
+         </div>
 
-        <div class="items"> 
-         <strong >Досягнення</strong><br>
-        <textarea type="text" name="achievement" style="max-width: 194px;min-width: 194px;max-height: 60px;min-height: 60px;" value="<?php echo @$data['achievement']; ?>"> </textarea><br/>
-        </div>
+         <div class="items">
+           <strong>Розклад роботи гуртка</strong><br>
+           <textarea type="text" name="schedule" style="max-width: 194px;min-width: 194px;max-height: 60px;min-height: 60px;" value="<?php echo @$data['schedule']; ?>"> </textarea><br/>
+         </div>
+         <button type="submit" name="update_circleInfo" class="but">Оновити інформацію</button>
+        </form>
 
-        <div class="items">
-         <strong>Розклад роботи гуртка</strong><br>
-        <textarea type="text" name="schedule" style="max-width: 194px;min-width: 194px;max-height: 60px;min-height: 60px;" value="<?php echo @$data['schedule']; ?>"> </textarea><br/>
-        </div>
-        <button type="submit" name="update_circleInfo" class="but">Оновити інформацію</button>
-      </form>
+        <div class="circle_info-head" style="width: 300px;"></div>
+      </div>
       <?php 
 
         if (isset($_POST['update_circleInfo'])) {
@@ -546,6 +550,20 @@ if ($role != 1) {
 					return false;
 				});
 			});
+
+       $(document).ready(function () {
+        $('#edit_head').change(function() {
+          $.ajax({
+            type: "POST",
+            url: "show_head.php",
+            data: "edit_head="+$("#edit_head").val(),
+            success: function(html) {
+              $('.circle_info-head').html(html);
+            }
+          });
+          return false;
+        });
+      });
 		</script>
 		 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   		<script src="js/jquery.maskedinput.min.js"></script>

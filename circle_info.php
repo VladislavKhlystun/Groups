@@ -164,7 +164,7 @@
           <?php
             foreach ($NAMA as $key) {
               if ($key->web_site != '') {
-                echo $key->web_site;
+                echo '<a href="'.$key->web_site.'">'.$key->web_site.'</a>';
               } else {
                 echo 'Сайт відсутній';
               }

@@ -246,6 +246,7 @@
 	<script src="js/jquery.maskedinput.min.js"></script>
 	<script>
 		$.mask.definitions['a']='[А-ЯІЇ]';
+		$.mask.definitions['I']='[1, I, І]';
 		$(".certificate").mask("I-aa 999999");
 		$('.telephone').mask("+380(99) 999-99-99");
 	</script>
